@@ -28,8 +28,8 @@ spec:
       source: docker.io/persesdev/perses
       target: harbor.isuanova.com/mirrors/docker.io/persesdev/perses
       versions:
-        - tag: "v0.54.0"
-          digest: sha256:a0e34ddaf9d7599d96036611af205b948c1179646844202d869f3bcf3d5d9e9c
+        - tag: "v0.55.1"
+          digest: sha256:292605f009770f07aa17217e70f877fabbc74858d0af9054d395064e1c411c06
 
     - name: perses-operator
       source: docker.io/persesdev/perses-operator

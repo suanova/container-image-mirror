@@ -38,6 +38,13 @@ spec:
         - tag: "v0.5.0"
           digest: sha256:8f8d7b09caefc35777dc88b9e8823efb7232b1ce2869648575176e760d7b55bf
 
+    - name: kube-rbac-proxy
+      source: quay.io/brancz/kube-rbac-proxy
+      target: harbor.isuanova.com/mirrors/quay.io/brancz/kube-rbac-proxy
+      versions:
+        - tag: "v0.23.1"
+          digest: sha256:c280684dd23793fb2f287d1f4efc84b7800b3e01205d770b98694827bfe514cb
+
     - name: windows-exporter
       source: ghcr.io/prometheus-community/windows-exporter
       target: harbor.isuanova.com/mirrors/ghcr.io/prometheus-community/windows-exporter
@@ -58,22 +65,22 @@ spec:
       source: quay.io/prometheus-operator/prometheus-config-reloader
       target: harbor.isuanova.com/mirrors/quay.io/prometheus-operator/prometheus-config-reloader
       versions:
-        - tag: "v0.94.0"
-          digest: sha256:142a1f11df8dd165f00375b0b1826aecb9c9adeb05c39855893138d7c7575ff7
+        - tag: "v0.94.2"
+          digest: sha256:a1897c67478bc23434534e91ad3855280771196b1daf17144db9dbcb655bef71
 
     - name: prometheus-operator
       source: quay.io/prometheus-operator/prometheus-operator
       target: harbor.isuanova.com/mirrors/quay.io/prometheus-operator/prometheus-operator
       versions:
-        - tag: "v0.94.0"
-          digest: sha256:cf153f64d6c38113fceb2cda7642365ea887f71edd7888f054e43e54cf177e55
+        - tag: "v0.94.2"
+          digest: sha256:c7edf0379b7271ef1705dce258d2bb73820e299cc95559369e9f6fc3321639ec
 
     - name: alertmanager
       source: quay.io/prometheus/alertmanager
       target: harbor.isuanova.com/mirrors/quay.io/prometheus/alertmanager
       versions:
-        - tag: "v0.34.0"
-          digest: sha256:690c7b525f4367aa91f73e2f91c632206d32e97c6384bdbf2fb7a861b420340d
+        - tag: "v0.34.2"
+          digest: sha256:39d8bb3966c694a124428a3a88fbcffd40bd069129ecd47c059f8a3f17c55f3b
 
     - name: node-exporter
       source: quay.io/prometheus/node-exporter
@@ -86,8 +93,8 @@ spec:
       source: quay.io/prometheus/prometheus
       target: harbor.isuanova.com/mirrors/quay.io/prometheus/prometheus
       versions:
-        - tag: "v3.14.0-distroless"
-          digest: sha256:50c707e96da5ade383cb1707790576480485e93de06aa60ad8802cb5f744bd0a
+        - tag: "v3.15.1-distroless"
+          digest: sha256:451a845bae1d51622b41af1780eb2ad911bbb79a9855bc8e9bb67fabbc03f934
 
     - name: thanos
       source: quay.io/thanos/thanos

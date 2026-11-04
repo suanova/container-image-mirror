@@ -14,15 +14,15 @@ spec:
       source: ghcr.io/cloudnative-pg/cloudnative-pg
       target: harbor.isuanova.com/mirrors/ghcr.io/cloudnative-pg/cloudnative-pg
       versions:
-        - tag: "1.30.0"
-          digest: sha256:a2701eb97cdd2a34b1fdb2cb51987f544b706e40bec72ae7146cd8580efefebb
+        - tag: "1.30.1"
+          digest: sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07
 
     - name: postgresql
       source: ghcr.io/cloudnative-pg/postgresql
       target: harbor.isuanova.com/mirrors/ghcr.io/cloudnative-pg/postgresql
       versions:
-        - tag: "16.14-system-trixie"
-          digest: sha256:04f35778ca3b55b52a81dae969bef179ead315b9f02d2b4b21a3415de269b836
+        - tag: "16.15-system-trixie"
+          digest: sha256:c19eac3ed7d86b0261ef5551c4daf9c61fba554a51664abe7c4f689f5b478993
 
     - name: redis
       source: quay.io/opstree/redis

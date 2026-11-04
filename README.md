@@ -147,7 +147,8 @@ Actions Summary 里生成带 digest 的表格（`scripts/generate-report.sh`）�
 
 ## 本地使用
 
-需要 `yq` (v4)、`jq`、`skopeo`；扫描需要 `trivy`，签名校验需要 `cosign`。
+需要 `yq` (v4)、`jq`、`skopeo`；扫描需要 `trivy`（可用
+`./scripts/install-trivy.sh` 安装固定版本），签名校验需要 `cosign`。
 
 ```bash
 make validate                  # 静态校验

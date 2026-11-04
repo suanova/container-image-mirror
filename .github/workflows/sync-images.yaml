@@ -103,8 +103,7 @@ jobs:
         if: github.event_name == 'push' || inputs.scan == true
         run: |
           set -euo pipefail
-          curl -fsSL https://raw.githubusercontent.com/aquasecurity/trivy/v0.76.1/contrib/install.sh \
-            | sudo sh -s -- -b /usr/local/bin v0.76.1
+          ./scripts/install-trivy.sh
           trivy --version
 
       - name: Install cosign

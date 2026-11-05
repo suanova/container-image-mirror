@@ -25,7 +25,7 @@
 
 | 源 | 镜像后 |
 | --- | --- |
-| `docker.io/library/nginx:1.30.1-alpine` | `harbor.isuanova.com/mirrors/docker.io/library/nginx:1.30.1-alpine` |
+| `docker.io/library/nginx:1.30.6-alpine` | `harbor.isuanova.com/mirrors/docker.io/library/nginx:1.30.6-alpine` |
 | `quay.io/prometheus/alertmanager:v0.34.0` | `harbor.isuanova.com/mirrors/quay.io/prometheus/alertmanager:v0.34.0` |
 | `ghcr.io/kube-vip/kube-vip:v1.0.3` | `harbor.isuanova.com/mirrors/ghcr.io/kube-vip/kube-vip:v1.0.3` |
 | `registry.k8s.io/pause:3.10.1` | `harbor.isuanova.com/mirrors/registry.k8s.io/pause:3.10.1` |

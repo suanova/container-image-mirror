@@ -44,8 +44,7 @@ spec:
       source: quay.io/coreos/etcd
       target: harbor.isuanova.com/mirrors/quay.io/coreos/etcd
       versions:
-        - tag: "v3.6.14"
-          digest: sha256:dfd3941bf6ced5fdb700f9b2d98b22b7bca7ceee13aec16224f93ff30d9a59c4
+        - tag: "v3.6.16"
 
     - name: coredns
       source: registry.k8s.io/coredns/coredns

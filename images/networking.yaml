@@ -31,6 +31,13 @@ spec:
         - tag: "v1.9.3"
           digest: sha256:192fc9bdadb6d2462e8cf7bd702ce3dd9648f3310c6038787448a1f509b7cd9f
 
+    - name: envoy
+      source: docker.io/envoyproxy/envoy
+      target: harbor.isuanova.com/mirrors/docker.io/envoyproxy/envoy
+      versions:
+        - tag: "distroless-v1.39.5"
+          digest: sha256:9d84a586119a27b50437dbb01eccd4722832741539b1ed53c8e9d6da6067a6e0
+
     - name: envoy-ratelimit
       source: docker.io/envoyproxy/ratelimit
       target: harbor.isuanova.com/mirrors/docker.io/envoyproxy/ratelimit

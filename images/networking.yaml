@@ -86,12 +86,10 @@ spec:
       source: quay.io/metallb/controller
       target: harbor.isuanova.com/mirrors/quay.io/metallb/controller
       versions:
-        - tag: "v0.13.9"
-          digest: sha256:c9ffd7215dcf93ff69b474c9bc5889ac69da395c62bd693110ba3b57fcecc28c
+        - tag: "v0.16.2"
 
     - name: metallb-speaker
       source: quay.io/metallb/speaker
       target: harbor.isuanova.com/mirrors/quay.io/metallb/speaker
       versions:
-        - tag: "v0.13.9"
-          digest: sha256:ed242e213112bf5c70978cd4abf3173582292daa692ee2ed07497e32275a77a5
+        - tag: "v0.16.2"

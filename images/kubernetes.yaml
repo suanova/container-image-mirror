@@ -38,8 +38,7 @@ spec:
       source: ghcr.io/kube-vip/kube-vip
       target: harbor.isuanova.com/mirrors/ghcr.io/kube-vip/kube-vip
       versions:
-        - tag: "v1.0.3"
-          digest: sha256:4e2791cc0238ae01b3986d827f4d568a25d846c94bab51238fe6241281a27113
+        - tag: "v1.3.1"
 
     - name: etcd
       source: quay.io/coreos/etcd

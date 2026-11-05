@@ -28,8 +28,8 @@ spec:
       source: quay.io/opstree/redis
       target: harbor.isuanova.com/mirrors/quay.io/opstree/redis
       versions:
-        - tag: "v7.0.15"
-          digest: sha256:284c5a51803da9483d66d4f458b1fa9e8b8a67a6e55b9793a0b005cd39239356
+        - tag: "v7.4.11"
+          digest: sha256:115d8e221b1459b9f2db7d927ed40318ffac4eb2cddb5702974bce92d32b7a51
 
     - name: redis-exporter
       source: quay.io/opstree/redis-exporter
@@ -49,5 +49,5 @@ spec:
       source: quay.io/opstree/redis-sentinel
       target: harbor.isuanova.com/mirrors/quay.io/opstree/redis-sentinel
       versions:
-        - tag: "v7.0.15"
-          digest: sha256:db76095344deeda213aa714ac3ab8205658eb7b8e1206ba409bdec17f68175fa
+        - tag: "v7.4.11"
+          digest: sha256:9aae9fadd987a72684d5e75f92081bd4a3df81726e713b47a71df8bae861cda6

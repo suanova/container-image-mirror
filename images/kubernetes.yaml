@@ -108,8 +108,8 @@ spec:
       source: registry.k8s.io/lws/lws
       target: harbor.isuanova.com/mirrors/registry.k8s.io/lws/lws
       versions:
-        - tag: "v0.10.0"
-          digest: sha256:46b1f3b6090d6983a0eab5b80385018d8ea74155ec09a67a17a2cf492d48aa4c
+        - tag: "v1.0.0"
+          digest: sha256:7aa4f6d26609d9f9650054227600337d240181f9d84cb2450474de3bd1e962a9
 
     - name: metrics-server
       source: registry.k8s.io/metrics-server/metrics-server

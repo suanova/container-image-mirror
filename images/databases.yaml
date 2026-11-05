@@ -32,11 +32,11 @@ spec:
           digest: sha256:115d8e221b1459b9f2db7d927ed40318ffac4eb2cddb5702974bce92d32b7a51
 
     - name: redis-exporter
-      source: quay.io/opstree/redis-exporter
-      target: harbor.isuanova.com/mirrors/quay.io/opstree/redis-exporter
+      source: quay.io/oliver006/redis_exporter
+      target: harbor.isuanova.com/mirrors/quay.io/oliver006/redis_exporter
       versions:
-        - tag: "v1.44.0"
-          digest: sha256:a63d2b6e946f8b82467ec5f853c24ab994b7cab5eacc3c3cbaa50e49bd27f235
+        - tag: "v1.97.0"
+          digest: sha256:f5f903fbe77571d455ede0453b084d6840bc62fc105efac001034421cab83b99
 
     - name: redis-operator
       source: quay.io/opstree/redis-operator

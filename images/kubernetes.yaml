@@ -122,8 +122,7 @@ spec:
       source: registry.k8s.io/nfd/node-feature-discovery
       target: harbor.isuanova.com/mirrors/registry.k8s.io/nfd/node-feature-discovery
       versions:
-        - tag: "v0.19.0"
-          digest: sha256:2fa1c99ad09bdf2c8ad97706a4ad2fd548c84d5ecd70ba32a6152c667b96c4d2
+        - tag: "v0.20.1"
 
     - name: pause
       source: registry.k8s.io/pause

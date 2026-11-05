@@ -31,8 +31,8 @@ spec:
       source: ghcr.io/jkroepke/kube-webhook-certgen
       target: harbor.isuanova.com/mirrors/ghcr.io/jkroepke/kube-webhook-certgen
       versions:
-        - tag: "1.8.8"
-          digest: sha256:cd85a621724cd9043a5b46a784578fa159437712f920166389fce830554e1c44
+        - tag: "1.11.0"
+          digest: sha256:778d97dc3986355625e14392419b3364c487a7c807d4d86ddad1df369129b082
 
     - name: kube-vip
       source: ghcr.io/kube-vip/kube-vip

@@ -41,13 +41,6 @@ spec:
         - tag: "v1.0.3"
           digest: sha256:4e2791cc0238ae01b3986d827f4d568a25d846c94bab51238fe6241281a27113
 
-    - name: kube-rbac-proxy
-      source: quay.io/brancz/kube-rbac-proxy
-      target: harbor.isuanova.com/mirrors/quay.io/brancz/kube-rbac-proxy
-      versions:
-        - tag: "v0.22.1"
-          digest: sha256:e8cad21b2f9ad0302f1ec972c555a1d916f51aae6003da3cd2554d5f29bb9bc4
-
     - name: etcd
       source: quay.io/coreos/etcd
       target: harbor.isuanova.com/mirrors/quay.io/coreos/etcd

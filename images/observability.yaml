@@ -14,15 +14,8 @@ spec:
       source: docker.io/grafana/grafana
       target: harbor.isuanova.com/mirrors/docker.io/grafana/grafana
       versions:
-        - tag: "13.2.2-distroless"
-          digest: sha256:69a5d2d957ca0bba434c160dcd4f2d07de9d6c756a0ba10ae7f52b72ced1e4cc
-
-    - name: kiwigrid-k8s-sidecar
-      source: docker.io/kiwigrid/k8s-sidecar
-      target: harbor.isuanova.com/mirrors/docker.io/kiwigrid/k8s-sidecar
-      versions:
-        - tag: "2.11.2"
-          digest: sha256:2912be006f62f9ea080194cf6d3afcd90daead8d101d0ba686a137a849f6a4f6
+        - tag: "13.2.5-distroless"
+          digest: sha256:7bd4a6c9fa5425e722654c56f4fc8404ed042a89542fdb6d963177b6d80497ec
 
     - name: perses
       source: docker.io/persesdev/perses
@@ -45,21 +38,12 @@ spec:
         - tag: "v0.23.1"
           digest: sha256:c280684dd23793fb2f287d1f4efc84b7800b3e01205d770b98694827bfe514cb
 
-    - name: windows-exporter
-      source: ghcr.io/prometheus-community/windows-exporter
-      target: harbor.isuanova.com/mirrors/ghcr.io/prometheus-community/windows-exporter
-      # Upstream only publishes a Windows image; there is no linux variant.
-      platforms: [windows/amd64]
-      versions:
-        - tag: "0.31.8"
-          digest: sha256:a44090bb42cd2d61fcb7ba50e6d08eb9be59528e5ef840962f4b8ab573de4134
-
     - name: kiwigrid-k8s-sidecar-quay
       source: quay.io/kiwigrid/k8s-sidecar
       target: harbor.isuanova.com/mirrors/quay.io/kiwigrid/k8s-sidecar
       versions:
-        - tag: "2.11.2"
-          digest: sha256:2912be006f62f9ea080194cf6d3afcd90daead8d101d0ba686a137a849f6a4f6
+        - tag: "2.14.3"
+          digest: sha256:52d311dcedd587421a236c4d6c621f05614c40a51386e955e0699dca97ec0880
 
     - name: prometheus-config-reloader
       source: quay.io/prometheus-operator/prometheus-config-reloader
@@ -100,5 +84,5 @@ spec:
       source: quay.io/thanos/thanos
       target: harbor.isuanova.com/mirrors/quay.io/thanos/thanos
       versions:
-        - tag: "v0.42.4"
-          digest: sha256:b567818fe608067eb0f1d7c2c4fe361e7ad83c8a256234c97685f1d0bf670cc8
+        - tag: "v0.42.5"
+          digest: sha256:0a546b98a8dd47735456ab389983675ee363d68127e334937a9fceeea10da5e7

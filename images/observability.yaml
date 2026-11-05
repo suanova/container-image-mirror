@@ -38,15 +38,6 @@ spec:
         - tag: "v0.23.1"
           digest: sha256:c280684dd23793fb2f287d1f4efc84b7800b3e01205d770b98694827bfe514cb
 
-    - name: windows-exporter
-      source: ghcr.io/prometheus-community/windows-exporter
-      target: harbor.isuanova.com/mirrors/ghcr.io/prometheus-community/windows-exporter
-      # Upstream only publishes a Windows image; there is no linux variant.
-      platforms: [windows/amd64]
-      versions:
-        - tag: "0.31.8"
-          digest: sha256:a44090bb42cd2d61fcb7ba50e6d08eb9be59528e5ef840962f4b8ab573de4134
-
     - name: kiwigrid-k8s-sidecar-quay
       source: quay.io/kiwigrid/k8s-sidecar
       target: harbor.isuanova.com/mirrors/quay.io/kiwigrid/k8s-sidecar

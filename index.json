@@ -474,6 +474,7 @@
       "versions": [
         {
           "tag": "v3.6.16",
+          "digest": "sha256:a9c7cc12156f4b26ca41f0b57ba5b76c45037ff6c1e47ea3d68cb7908d48a965",
           "platforms": [
             "linux/amd64"
           ]
@@ -649,6 +650,7 @@
       "versions": [
         {
           "tag": "v1.3.1",
+          "digest": "sha256:1962f9daf226503f7e6b107f595cb28b7917fd2d0113957075e19a3e5a6c1e33",
           "platforms": [
             "linux/amd64"
           ]
@@ -776,6 +778,7 @@
       "versions": [
         {
           "tag": "v0.9.1",
+          "digest": "sha256:9b0ba1926e1d3089673f45461c3c1416109dea33b3ba3434048defd380df329b",
           "platforms": [
             "linux/amd64"
           ]
@@ -830,6 +833,7 @@
         },
         {
           "tag": "1.30.6-alpine",
+          "digest": "sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949",
           "platforms": [
             "linux/amd64"
           ]
@@ -861,6 +865,7 @@
       "versions": [
         {
           "tag": "v0.20.1",
+          "digest": "sha256:6fc5c9af9176e1acb5ce57a4a1d0c0d3eb25cd34f5bdd0efefebf0efe45a8379",
           "platforms": [
             "linux/amd64"
           ]

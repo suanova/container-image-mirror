@@ -11,7 +11,6 @@ spec:
 
   images:
     - name: rook-ceph
-      consumers: [cubestack-base]
       source: docker.io/rook/ceph
       target: harbor.isuanova.com/mirrors/docker.io/rook/ceph
       versions:
@@ -21,7 +20,6 @@ spec:
           digest: sha256:a642e07d4d0b4d02214e435337c7f5d3f5154369270ea5180de9d5d5d9d965c2
 
     - name: ceph
-      consumers: [cubestack-base]
       source: quay.io/ceph/ceph
       target: harbor.isuanova.com/mirrors/quay.io/ceph/ceph
       versions:
@@ -29,7 +27,6 @@ spec:
           digest: sha256:6b4b5ae33acd3d736eb26d2a19238bce71a22f9cfb99cca887ba6312d0957644
 
     - name: ceph-csi-operator
-      consumers: [cubestack-base]
       source: quay.io/cephcsi/ceph-csi-operator
       target: harbor.isuanova.com/mirrors/quay.io/cephcsi/ceph-csi-operator
       versions:
@@ -39,7 +36,6 @@ spec:
           digest: sha256:c62933fd4083635f969f8a61932af45dba9902d48867e2b5d98a69d8e4344eb6
 
     - name: ceph-csi
-      consumers: [cubestack-base]
       source: quay.io/cephcsi/cephcsi
       target: harbor.isuanova.com/mirrors/quay.io/cephcsi/cephcsi
       versions:
@@ -49,7 +45,6 @@ spec:
           digest: sha256:886e6d2416d62dd7c8fbe659b6306b6c9451d6918e35ad5d1ac774520e11ef87
 
     - name: csi-addons-sidecar
-      consumers: [cubestack-base]
       source: quay.io/csiaddons/k8s-sidecar
       target: harbor.isuanova.com/mirrors/quay.io/csiaddons/k8s-sidecar
       versions:
@@ -59,7 +54,6 @@ spec:
           digest: sha256:69092d026323307933fba2bed9c57d864f2a92cfd385d644b478442ded0d2886
 
     - name: csi-attacher
-      consumers: [cubestack-base]
       source: registry.k8s.io/sig-storage/csi-attacher
       target: harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-attacher
       versions:
@@ -69,7 +63,6 @@ spec:
           digest: sha256:b9dc9a714a484ccdeeb6f86d88d4db9b7a5ecfc5a55da6db3a60bb3fa33c278a
 
     - name: csi-node-driver-registrar
-      consumers: [cubestack-base]
       source: registry.k8s.io/sig-storage/csi-node-driver-registrar
       target: harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-node-driver-registrar
       versions:
@@ -79,7 +72,6 @@ spec:
           digest: sha256:f9de845b170155199f2a2a3f9531cf13d78e31235e9db6b6582a8b0db0a50dad
 
     - name: csi-provisioner
-      consumers: [cubestack-base]
       source: registry.k8s.io/sig-storage/csi-provisioner
       target: harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-provisioner
       versions:
@@ -89,7 +81,6 @@ spec:
           digest: sha256:6be9f63ca4caa6c46aae55aa372500949d8a21473d72f819da1f746076b32d4e
 
     - name: csi-resizer
-      consumers: [cubestack-base]
       source: registry.k8s.io/sig-storage/csi-resizer
       target: harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-resizer
       versions:
@@ -99,7 +90,6 @@ spec:
           digest: sha256:589e525cddef6d768e68da1f0bc9ffd0a24bf3add3dd010648eb7189976fde79
 
     - name: csi-snapshotter
-      consumers: [cubestack-base]
       source: registry.k8s.io/sig-storage/csi-snapshotter
       target: harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-snapshotter
       versions:
@@ -109,7 +99,6 @@ spec:
           digest: sha256:da081c27e8a6d91f36042c1942362d0515ced8d06e18c11b8f893e58c4d6d797
 
     - name: csi-snapshot-metadata
-      consumers: [cubestack-base]
       source: registry.k8s.io/sig-storage/csi-snapshot-metadata
       target: harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-snapshot-metadata
       versions:
@@ -117,7 +106,6 @@ spec:
           digest: sha256:8069b3bc03f21fe804f6f362c26037598b9f947a9e3e9d60336988ca7c07f61e
 
     - name: local-volume-provisioner
-      consumers: [cubestack-base]
       source: registry.k8s.io/sig-storage/local-volume-provisioner
       target: harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/local-volume-provisioner
       versions:
@@ -127,7 +115,6 @@ spec:
           digest: sha256:a112f1625aad84e4f425141199ab6ddbb49432c66e05dbbaab033d0ab2e8dfaf
 
     - name: snapshot-controller
-      consumers: [cubestack-base]
       source: registry.k8s.io/sig-storage/snapshot-controller
       target: harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/snapshot-controller
       versions:

@@ -21,22 +21,6 @@ except ImportError:  # pragma: no cover - exercised by humans without deps
 ROOT = Path(__file__).resolve().parent.parent
 
 
-def _consumers(path: Path, name: str, img: dict) -> list[str]:
-    raw = img.get("consumers")
-    if not isinstance(raw, list) or not raw:
-        raise SystemExit(f"{path}: {name}: consumers must be a non-empty list")
-    consumers: list[str] = []
-    for item in raw:
-        if not isinstance(item, str):
-            raise SystemExit(f"{path}: {name}: consumer must be a string")
-        value = item.strip()
-        if not value:
-            raise SystemExit(f"{path}: {name}: consumer must not be empty")
-        if value not in consumers:
-            consumers.append(value)
-    return consumers
-
-
 def load_images(images_dir: Path) -> list[dict]:
     images: list[dict] = []
     seen: set[tuple[str, str]] = set()
@@ -54,7 +38,6 @@ def load_images(images_dir: Path) -> list[dict]:
             if key in seen:
                 raise SystemExit(f"{path}: duplicate image name '{name}' in category '{category}'")
             seen.add(key)
-            consumers = _consumers(path, name, img)
             platforms = img.get("platforms") or defaults
             versions = []
             for ver in img.get("versions") or []:
@@ -68,7 +51,6 @@ def load_images(images_dir: Path) -> list[dict]:
                 {
                     "id": f"{category}/{name}",
                     "name": name,
-                    "consumers": consumers,
                     "category": category,
                     "source": str(img.get("source", "")),
                     "target": str(img.get("target", "")),
@@ -85,7 +67,7 @@ def main() -> int:
     ap.add_argument("--output", type=Path, default=ROOT / "index.json")
     args = ap.parse_args()
 
-    data = {"schema": 2, "images": load_images(args.images_dir)}
+    data = {"schema": 1, "images": load_images(args.images_dir)}
     text = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
     if str(args.output) == "-":
         sys.stdout.write(text)

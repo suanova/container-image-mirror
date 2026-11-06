@@ -36,13 +36,6 @@ spec:
     # mirrored image is visible from its pull reference alone.
     requireSourceHostInTarget: true
 
-  # Downstream catalog consumers. Add a label here before using it in
-  # images/*.yaml. Notification targets stay in repository variables, so this
-  # file stays product-neutral.
-  consumers:
-    - cubestack-base
-    - cubestack-platform
-
   signature:
     # Opt-in per image via `signature.verify: true` in images/*.yaml.
     # Most upstream projects do not sign yet, so this is off by default.

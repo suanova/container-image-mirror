@@ -11,7 +11,6 @@ spec:
 
   images:
     - name: busybox
-      consumers: [cubestack-base]
       source: docker.io/library/busybox
       target: harbor.isuanova.com/mirrors/docker.io/library/busybox
       versions:
@@ -19,7 +18,6 @@ spec:
           digest: sha256:a46257e06c82ad85242d0d38077d0a52d9896389ca60a1a59d3463db586e5fa4
 
     - name: registry
-      consumers: [cubestack-base]
       source: docker.io/library/registry
       target: harbor.isuanova.com/mirrors/docker.io/library/registry
       versions:
@@ -30,7 +28,6 @@ spec:
         - tag: "3.1.2"
 
     - name: local-path-provisioner
-      consumers: [cubestack-base]
       source: docker.io/rancher/local-path-provisioner
       target: harbor.isuanova.com/mirrors/docker.io/rancher/local-path-provisioner
       versions:
@@ -38,7 +35,6 @@ spec:
           digest: sha256:e757967a5ec338f6a9b371c5a9688bedaa8c3578ea3dd4db329ea0084be0a86f
 
     - name: kube-webhook-certgen
-      consumers: [cubestack-platform]
       source: ghcr.io/jkroepke/kube-webhook-certgen
       target: harbor.isuanova.com/mirrors/ghcr.io/jkroepke/kube-webhook-certgen
       versions:
@@ -48,7 +44,6 @@ spec:
           digest: sha256:cd85a621724cd9043a5b46a784578fa159437712f920166389fce830554e1c44
 
     - name: kube-vip
-      consumers: [cubestack-base]
       source: ghcr.io/kube-vip/kube-vip
       target: harbor.isuanova.com/mirrors/ghcr.io/kube-vip/kube-vip
       versions:
@@ -57,7 +52,6 @@ spec:
           digest: sha256:4e2791cc0238ae01b3986d827f4d568a25d846c94bab51238fe6241281a27113
 
     - name: etcd
-      consumers: [cubestack-base]
       source: quay.io/coreos/etcd
       target: harbor.isuanova.com/mirrors/quay.io/coreos/etcd
       versions:
@@ -66,7 +60,6 @@ spec:
           digest: sha256:dfd3941bf6ced5fdb700f9b2d98b22b7bca7ceee13aec16224f93ff30d9a59c4
 
     - name: coredns
-      consumers: [cubestack-base]
       source: registry.k8s.io/coredns/coredns
       target: harbor.isuanova.com/mirrors/registry.k8s.io/coredns/coredns
       versions:
@@ -74,7 +67,6 @@ spec:
           digest: sha256:986f04c2e15e147d00bdd51e8c51bcef3644b13ff806be7d2ff1b261d6dfbae1
 
     - name: cluster-proportional-autoscaler
-      consumers: [cubestack-base]
       source: registry.k8s.io/cpa/cluster-proportional-autoscaler
       target: harbor.isuanova.com/mirrors/registry.k8s.io/cpa/cluster-proportional-autoscaler
       versions:
@@ -82,7 +74,6 @@ spec:
           digest: sha256:a4d0ab78d5e2ec356c981f361a5ff7012b21ad353b4a980e1ca30c11dda6564b
 
     - name: dns-node-cache
-      consumers: [cubestack-base]
       source: registry.k8s.io/dns/k8s-dns-node-cache
       target: harbor.isuanova.com/mirrors/registry.k8s.io/dns/k8s-dns-node-cache
       versions:
@@ -90,7 +81,6 @@ spec:
           digest: sha256:c10362235fc2a5c4cd8f2c4cd4b79221026ba4f69005b1c640a6ba48410f7fa4
 
     - name: kube-apiserver
-      consumers: [cubestack-base]
       source: registry.k8s.io/kube-apiserver
       target: harbor.isuanova.com/mirrors/registry.k8s.io/kube-apiserver
       versions:
@@ -98,7 +88,6 @@ spec:
           digest: sha256:6a7b73e718540d2c097cbcdc84c0f2cffad7a51ebccaf7f0b8cceb464715e1d9
 
     - name: kube-controller-manager
-      consumers: [cubestack-base]
       source: registry.k8s.io/kube-controller-manager
       target: harbor.isuanova.com/mirrors/registry.k8s.io/kube-controller-manager
       versions:
@@ -106,7 +95,6 @@ spec:
           digest: sha256:b27c0bf88a81437747b257a1e6d019a921ec3a97b724e67dfc180efe3125998b
 
     - name: kube-proxy
-      consumers: [cubestack-base]
       source: registry.k8s.io/kube-proxy
       target: harbor.isuanova.com/mirrors/registry.k8s.io/kube-proxy
       versions:
@@ -114,7 +102,6 @@ spec:
           digest: sha256:5d641d163114b212229b8bceba9f859cff1265ba40e02a2bb0ec8743f56c1033
 
     - name: kube-scheduler
-      consumers: [cubestack-base]
       source: registry.k8s.io/kube-scheduler
       target: harbor.isuanova.com/mirrors/registry.k8s.io/kube-scheduler
       versions:
@@ -122,7 +109,6 @@ spec:
           digest: sha256:f4334826c53876b700f73cd06a69c405c6f882a4116c5813786e046ee6eca1ac
 
     - name: kube-state-metrics
-      consumers: [cubestack-platform]
       source: registry.k8s.io/kube-state-metrics/kube-state-metrics
       target: harbor.isuanova.com/mirrors/registry.k8s.io/kube-state-metrics/kube-state-metrics
       versions:
@@ -130,7 +116,6 @@ spec:
           digest: sha256:42cfe3723a5f058171c627537fb57a3ea0f26e4380fa18555a95cb1a1b4cfc5b
 
     - name: lws
-      consumers: [cubestack-platform]
       source: registry.k8s.io/lws/lws
       target: harbor.isuanova.com/mirrors/registry.k8s.io/lws/lws
       versions:
@@ -140,7 +125,6 @@ spec:
           digest: sha256:46b1f3b6090d6983a0eab5b80385018d8ea74155ec09a67a17a2cf492d48aa4c
 
     - name: metrics-server
-      consumers: [cubestack-base]
       source: registry.k8s.io/metrics-server/metrics-server
       target: harbor.isuanova.com/mirrors/registry.k8s.io/metrics-server/metrics-server
       versions:
@@ -149,7 +133,6 @@ spec:
           digest: sha256:d9862115e7c7881280d3d75ca26bda8ffc0fc213315979575bf23ce9826205c0
 
     - name: node-feature-discovery
-      consumers: [cubestack-base]
       source: registry.k8s.io/nfd/node-feature-discovery
       target: harbor.isuanova.com/mirrors/registry.k8s.io/nfd/node-feature-discovery
       versions:
@@ -158,7 +141,6 @@ spec:
           digest: sha256:2fa1c99ad09bdf2c8ad97706a4ad2fd548c84d5ecd70ba32a6152c667b96c4d2
 
     - name: pause
-      consumers: [cubestack-base]
       source: registry.k8s.io/pause
       target: harbor.isuanova.com/mirrors/registry.k8s.io/pause
       versions:

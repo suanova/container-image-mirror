@@ -18,7 +18,7 @@ Kubernetes，也不管理自研镜像（`suanova/`、`suanova-private/`）。新
 | `platforms` 是断言而非过滤器 | `skopeo copy --all` 复制整个 manifest list；声明的架构缺失即失败 |
 | 只断言 `linux/amd64` | 集群只有 amd64 节点；不裁剪 manifest list，digest 仍与上游一致 |
 | 单次运行只写一个 authfile | 兼容旧版 skopeo，凭据不落盘到仓库 |
-| `consumers` 声明镜像消费者 | 下游按 label 取自己需要的镜像；新增产品不需要改同步逻辑 |
+| `versions[]` 只追加 | 多发布线可以各选 tag；旧 tag 不删，历史 pin 仍可解析 |
 | `index.json` 是机器可读目录 | 下游按 commit 读取，不需要解析 YAML；与清单在同一个 PR 更新 |
 
 ## 目录结构
@@ -26,7 +26,7 @@ Kubernetes，也不管理自研镜像（`suanova/`、`suanova-private/`）。新
 ```
 images/                 要同步的镜像，按领域分文件（唯一需要日常维护的地方）
 config/registries.yaml  源/目标 Registry 声明
-config/policies.yaml    全局策略：平台、重试、签名、扫描、consumer labels
+config/policies.yaml    全局策略：平台、重试、签名、扫描
 scripts/                validate / sync / verify / scan / report
 docs/                   新增镜像、路径映射、安全说明
 .github/workflows/      PR 校验、手动同步、定时兜底、每周扫描
@@ -91,7 +91,6 @@ spec:
 
   images:
     - name: nginx
-      consumers: [cubestack-base]  # 至少一个；label 见 config/policies.yaml
       source: docker.io/library/nginx
       target: harbor.isuanova.com/mirrors/docker.io/library/nginx
       versions:
@@ -109,8 +108,7 @@ spec:
 
 字段约束由 `scripts/validate.jq` 执行，常见的几条：
 
-- `consumers` 必填且非空；每个 label 必须先在 `config/policies.yaml` 的
-  `spec.consumers` 里声明。label 表示哪些下游消费这个镜像，不绑定目录结构。
+- `versions[]` 只追加：只要还有发布线在用某个 tag，就不要删除它。
 - `source` / `target` 必须写全 Registry 主机名，且**不能**带 tag 或 digest；
   版本只能写在 `versions[]`。
 - `target` 必须是 `<destination>/<project>/<source-host>/<path>`，
@@ -144,22 +142,21 @@ Actions Summary 里生成带 digest 的表格（`scripts/generate-report.sh`）�
 
 - 生成：`make index`（`scripts/generate-index.py`，需要 PyYAML）；
 - 校验：`make validate` 会检查 `index.json` 与清单一致，不一致直接失败；
-- 结构：每个镜像带 `id`（`<category>/<name>`）、`consumers[]`、`source`、
-  `target`、`versions[]`（tag / digest / platforms）。
+- 结构：每个镜像带 `id`（`<category>/<name>`）、`source`、`target`、
+  `versions[]`（tag / digest / platforms）。
 
-`sync-images.yaml` 在 main 同步成功后按 `vars.MIRROR_NOTIFY_TARGETS` 发
-`repository_dispatch: mirror-updated`。该变量是 JSON 数组，例如：
+`sync-images.yaml` 在 main 同步成功后按 `vars.MIRROR_NOTIFY_TARGETS` 给下游仓库发
+`repository_dispatch: mirror-updated`。该变量是仓库名 JSON 数组：
 
 ```json
 [
-  {"repo": "org/product-base", "consumers": ["product-base"]},
-  {"repo": "org/product-platform", "consumers": ["product-platform"]}
+  "org/product-a",
+  "org/product-b"
 ]
 ```
 
-payload 带 `catalog_commit` 和该仓库关心的 `consumers`。下游按
-`catalog_commit` 重新读取 `index.json`，只处理自己 consumer label 下的镜像，
-并自行校验 digest，不信任 payload 内容。
+payload 只带 `catalog_commit`。下游按该 commit 重新读取 `index.json`，只处理自己
+引用的 `(catalog_id, tag)`，并自行校验 digest，不信任 payload 内容。
 
 通知目标不写进仓库，是为了让这个 public 仓库保持产品中立、不出现私有仓库名。
 需要配置：
@@ -170,17 +167,16 @@ payload 带 `catalog_commit` 和该仓库关心的 `consumers`。下游按
 
 未配置时 notify job 只告警、不失败。新增产品只需要：
 
-1. 在 `config/policies.yaml` 的 `spec.consumers` 加 label；
-2. 在 `MIRROR_NOTIFY_TARGETS` 加一条目标仓库；
-3. 给 GitHub App 授权该仓库；
-4. 下游实现自己的 `mirror-updated` receiver。
+1. 在 `MIRROR_NOTIFY_TARGETS` 加一条目标仓库；
+2. 给 GitHub App 授权该仓库；
+3. 下游实现自己的 `mirror-updated` receiver。
 
 ## 工作流
 
 | Workflow | 触发 | 行为 |
 | --- | --- | --- |
 | `validate.yaml` | PR、main push | YAML lint、shellcheck、静态校验；无凭据、无网络 |
-| `sync-images.yaml` | 手动、`images/**` 合入 main | 按文件矩阵并发同步，可选扫描，产出报告；成功后按 consumer dispatch 下游 |
+| `sync-images.yaml` | 手动、`images/**` 合入 main | 按文件矩阵并发同步，可选扫描，产出报告；成功后 dispatch 下游 |
 | `scheduled-sync.yaml` | 每周一 03:17 | 重新断言固定版本：补缺失、报漂移；**不会**升级版本 |
 | `security-scan.yaml` | 每周一 04:41、手动 | 对 Harbor 中现有 digest 做漏洞扫描 + SBOM |
 

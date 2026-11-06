@@ -21,7 +21,6 @@ sources=$(yq -o=json -I=0 '[.spec.sources[]?.host]' "$REGISTRY_FILE")
 default_platforms=$(yq -o=json -I=0 '.spec.manifest.defaultPlatforms // []' "$POLICY_FILE")
 allow_latest=$(policy '.spec.manifest.allowLatest' false)
 require_host=$(policy '.spec.manifest.requireSourceHostInTarget' true)
-consumers=$(yq -o=json -I=0 '.spec.consumers // []' "$POLICY_FILE")
 
 violations=()
 
@@ -35,10 +34,6 @@ violations=()
   violations+=("config/policies.yaml: apiVersion must be ${MIRROR_API_VERSION}")
 [[ $(yq -r '.kind // ""' "$POLICY_FILE") == "MirrorPolicy" ]] ||
   violations+=("config/policies.yaml: kind must be MirrorPolicy")
-
-if [[ $(jq 'length' <<<"$consumers") -eq 0 ]]; then
-  violations+=("config/policies.yaml: at least one consumer is required")
-fi
 
 if [[ $(jq 'length' <<<"$destinations") -eq 0 ]]; then
   violations+=("config/registries.yaml: at least one destination is required")
@@ -69,7 +64,6 @@ while IFS=$'\t' read -r category doc; do
     --argjson destinations "$destinations" \
     --argjson sources "$sources" \
     --argjson defaultPlatforms "$default_platforms" \
-    --argjson consumers "$consumers" \
     --arg allowLatest "$allow_latest" \
     --arg requireHost "$require_host" <<<"$doc"); then
     violations+=("${file}: validation program failed, the document could not be parsed")

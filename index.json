@@ -1,12 +1,9 @@
 {
-  "schema": 2,
+  "schema": 1,
   "images": [
     {
       "id": "networking/ai-gateway-controller",
       "name": "ai-gateway-controller",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "networking",
       "source": "docker.io/envoyproxy/ai-gateway-controller",
       "target": "harbor.isuanova.com/mirrors/docker.io/envoyproxy/ai-gateway-controller",
@@ -23,9 +20,6 @@
     {
       "id": "networking/ai-gateway-extproc",
       "name": "ai-gateway-extproc",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "networking",
       "source": "docker.io/envoyproxy/ai-gateway-extproc",
       "target": "harbor.isuanova.com/mirrors/docker.io/envoyproxy/ai-gateway-extproc",
@@ -42,9 +36,6 @@
     {
       "id": "observability/alertmanager",
       "name": "alertmanager",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "quay.io/prometheus/alertmanager",
       "target": "harbor.isuanova.com/mirrors/quay.io/prometheus/alertmanager",
@@ -61,9 +52,6 @@
     {
       "id": "kubernetes/busybox",
       "name": "busybox",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "docker.io/library/busybox",
       "target": "harbor.isuanova.com/mirrors/docker.io/library/busybox",
@@ -80,9 +68,6 @@
     {
       "id": "networking/calico-cni",
       "name": "calico-cni",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "networking",
       "source": "quay.io/calico/cni",
       "target": "harbor.isuanova.com/mirrors/quay.io/calico/cni",
@@ -99,9 +84,6 @@
     {
       "id": "networking/calico-kube-controllers",
       "name": "calico-kube-controllers",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "networking",
       "source": "quay.io/calico/kube-controllers",
       "target": "harbor.isuanova.com/mirrors/quay.io/calico/kube-controllers",
@@ -118,9 +100,6 @@
     {
       "id": "networking/calico-node",
       "name": "calico-node",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "networking",
       "source": "quay.io/calico/node",
       "target": "harbor.isuanova.com/mirrors/quay.io/calico/node",
@@ -137,9 +116,6 @@
     {
       "id": "gpu/cc-manager",
       "name": "cc-manager",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/cloud-native/k8s-cc-manager",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/cloud-native/k8s-cc-manager",
@@ -156,9 +132,6 @@
     {
       "id": "storage/ceph",
       "name": "ceph",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "quay.io/ceph/ceph",
       "target": "harbor.isuanova.com/mirrors/quay.io/ceph/ceph",
@@ -175,9 +148,6 @@
     {
       "id": "storage/ceph-csi",
       "name": "ceph-csi",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "quay.io/cephcsi/cephcsi",
       "target": "harbor.isuanova.com/mirrors/quay.io/cephcsi/cephcsi",
@@ -201,9 +171,6 @@
     {
       "id": "storage/ceph-csi-operator",
       "name": "ceph-csi-operator",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "quay.io/cephcsi/ceph-csi-operator",
       "target": "harbor.isuanova.com/mirrors/quay.io/cephcsi/ceph-csi-operator",
@@ -227,9 +194,6 @@
     {
       "id": "databases/cloudnative-pg-operator",
       "name": "cloudnative-pg-operator",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "databases",
       "source": "ghcr.io/cloudnative-pg/cloudnative-pg",
       "target": "harbor.isuanova.com/mirrors/ghcr.io/cloudnative-pg/cloudnative-pg",
@@ -246,9 +210,6 @@
     {
       "id": "kubernetes/cluster-proportional-autoscaler",
       "name": "cluster-proportional-autoscaler",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/cpa/cluster-proportional-autoscaler",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/cpa/cluster-proportional-autoscaler",
@@ -265,9 +226,6 @@
     {
       "id": "gpu/container-toolkit",
       "name": "container-toolkit",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/k8s/container-toolkit",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/k8s/container-toolkit",
@@ -284,9 +242,6 @@
     {
       "id": "kubernetes/coredns",
       "name": "coredns",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/coredns/coredns",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/coredns/coredns",
@@ -303,9 +258,6 @@
     {
       "id": "storage/csi-addons-sidecar",
       "name": "csi-addons-sidecar",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "quay.io/csiaddons/k8s-sidecar",
       "target": "harbor.isuanova.com/mirrors/quay.io/csiaddons/k8s-sidecar",
@@ -329,9 +281,6 @@
     {
       "id": "storage/csi-attacher",
       "name": "csi-attacher",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "registry.k8s.io/sig-storage/csi-attacher",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-attacher",
@@ -355,9 +304,6 @@
     {
       "id": "storage/csi-node-driver-registrar",
       "name": "csi-node-driver-registrar",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "registry.k8s.io/sig-storage/csi-node-driver-registrar",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-node-driver-registrar",
@@ -381,9 +327,6 @@
     {
       "id": "storage/csi-provisioner",
       "name": "csi-provisioner",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "registry.k8s.io/sig-storage/csi-provisioner",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-provisioner",
@@ -407,9 +350,6 @@
     {
       "id": "storage/csi-resizer",
       "name": "csi-resizer",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "registry.k8s.io/sig-storage/csi-resizer",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-resizer",
@@ -433,9 +373,6 @@
     {
       "id": "storage/csi-snapshot-metadata",
       "name": "csi-snapshot-metadata",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "registry.k8s.io/sig-storage/csi-snapshot-metadata",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-snapshot-metadata",
@@ -452,9 +389,6 @@
     {
       "id": "storage/csi-snapshotter",
       "name": "csi-snapshotter",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "registry.k8s.io/sig-storage/csi-snapshotter",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-snapshotter",
@@ -478,9 +412,6 @@
     {
       "id": "gpu/cuda-sample",
       "name": "cuda-sample",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/k8s/cuda-sample",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/k8s/cuda-sample",
@@ -497,9 +428,6 @@
     {
       "id": "gpu/dcgm-exporter",
       "name": "dcgm-exporter",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/k8s/dcgm-exporter",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/k8s/dcgm-exporter",
@@ -516,9 +444,6 @@
     {
       "id": "kubernetes/dns-node-cache",
       "name": "dns-node-cache",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/dns/k8s-dns-node-cache",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/dns/k8s-dns-node-cache",
@@ -535,9 +460,6 @@
     {
       "id": "gpu/driver-manager",
       "name": "driver-manager",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/cloud-native/k8s-driver-manager",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/cloud-native/k8s-driver-manager",
@@ -554,9 +476,6 @@
     {
       "id": "networking/envoy",
       "name": "envoy",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "networking",
       "source": "docker.io/envoyproxy/envoy",
       "target": "harbor.isuanova.com/mirrors/docker.io/envoyproxy/envoy",
@@ -573,9 +492,6 @@
     {
       "id": "networking/envoy-gateway",
       "name": "envoy-gateway",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "networking",
       "source": "docker.io/envoyproxy/gateway",
       "target": "harbor.isuanova.com/mirrors/docker.io/envoyproxy/gateway",
@@ -592,9 +508,6 @@
     {
       "id": "networking/envoy-ratelimit",
       "name": "envoy-ratelimit",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "networking",
       "source": "docker.io/envoyproxy/ratelimit",
       "target": "harbor.isuanova.com/mirrors/docker.io/envoyproxy/ratelimit",
@@ -611,9 +524,6 @@
     {
       "id": "kubernetes/etcd",
       "name": "etcd",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "quay.io/coreos/etcd",
       "target": "harbor.isuanova.com/mirrors/quay.io/coreos/etcd",
@@ -636,9 +546,6 @@
     {
       "id": "gpu/gpu-operator",
       "name": "gpu-operator",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/gpu-operator",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/gpu-operator",
@@ -655,9 +562,6 @@
     {
       "id": "observability/grafana",
       "name": "grafana",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "docker.io/grafana/grafana",
       "target": "harbor.isuanova.com/mirrors/docker.io/grafana/grafana",
@@ -681,9 +585,6 @@
     {
       "id": "gpu/k8s-device-plugin",
       "name": "k8s-device-plugin",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/k8s-device-plugin",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/k8s-device-plugin",
@@ -700,9 +601,6 @@
     {
       "id": "observability/kiwigrid-k8s-sidecar-quay",
       "name": "kiwigrid-k8s-sidecar-quay",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "quay.io/kiwigrid/k8s-sidecar",
       "target": "harbor.isuanova.com/mirrors/quay.io/kiwigrid/k8s-sidecar",
@@ -726,9 +624,6 @@
     {
       "id": "kubernetes/kube-apiserver",
       "name": "kube-apiserver",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/kube-apiserver",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/kube-apiserver",
@@ -745,9 +640,6 @@
     {
       "id": "kubernetes/kube-controller-manager",
       "name": "kube-controller-manager",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/kube-controller-manager",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/kube-controller-manager",
@@ -764,9 +656,6 @@
     {
       "id": "kubernetes/kube-proxy",
       "name": "kube-proxy",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/kube-proxy",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/kube-proxy",
@@ -783,9 +672,6 @@
     {
       "id": "observability/kube-rbac-proxy",
       "name": "kube-rbac-proxy",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "quay.io/brancz/kube-rbac-proxy",
       "target": "harbor.isuanova.com/mirrors/quay.io/brancz/kube-rbac-proxy",
@@ -802,9 +688,6 @@
     {
       "id": "kubernetes/kube-scheduler",
       "name": "kube-scheduler",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/kube-scheduler",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/kube-scheduler",
@@ -821,9 +704,6 @@
     {
       "id": "kubernetes/kube-state-metrics",
       "name": "kube-state-metrics",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/kube-state-metrics/kube-state-metrics",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/kube-state-metrics/kube-state-metrics",
@@ -840,9 +720,6 @@
     {
       "id": "kubernetes/kube-vip",
       "name": "kube-vip",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "ghcr.io/kube-vip/kube-vip",
       "target": "harbor.isuanova.com/mirrors/ghcr.io/kube-vip/kube-vip",
@@ -865,9 +742,6 @@
     {
       "id": "kubernetes/kube-webhook-certgen",
       "name": "kube-webhook-certgen",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "kubernetes",
       "source": "ghcr.io/jkroepke/kube-webhook-certgen",
       "target": "harbor.isuanova.com/mirrors/ghcr.io/jkroepke/kube-webhook-certgen",
@@ -891,9 +765,6 @@
     {
       "id": "gpu/kubevirt-gpu-device-plugin",
       "name": "kubevirt-gpu-device-plugin",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/kubevirt-gpu-device-plugin",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/kubevirt-gpu-device-plugin",
@@ -910,9 +781,6 @@
     {
       "id": "kubernetes/local-path-provisioner",
       "name": "local-path-provisioner",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "docker.io/rancher/local-path-provisioner",
       "target": "harbor.isuanova.com/mirrors/docker.io/rancher/local-path-provisioner",
@@ -929,9 +797,6 @@
     {
       "id": "storage/local-volume-provisioner",
       "name": "local-volume-provisioner",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "registry.k8s.io/sig-storage/local-volume-provisioner",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/local-volume-provisioner",
@@ -955,9 +820,6 @@
     {
       "id": "kubernetes/lws",
       "name": "lws",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/lws/lws",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/lws/lws",
@@ -981,9 +843,6 @@
     {
       "id": "networking/metallb-controller",
       "name": "metallb-controller",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "networking",
       "source": "quay.io/metallb/controller",
       "target": "harbor.isuanova.com/mirrors/quay.io/metallb/controller",
@@ -1000,9 +859,6 @@
     {
       "id": "networking/metallb-speaker",
       "name": "metallb-speaker",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "networking",
       "source": "quay.io/metallb/speaker",
       "target": "harbor.isuanova.com/mirrors/quay.io/metallb/speaker",
@@ -1019,9 +875,6 @@
     {
       "id": "kubernetes/metrics-server",
       "name": "metrics-server",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/metrics-server/metrics-server",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/metrics-server/metrics-server",
@@ -1044,9 +897,6 @@
     {
       "id": "gpu/mig-manager",
       "name": "mig-manager",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/cloud-native/k8s-mig-manager",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/cloud-native/k8s-mig-manager",
@@ -1063,9 +913,6 @@
     {
       "id": "networking/multus-cni",
       "name": "multus-cni",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "networking",
       "source": "ghcr.io/k8snetworkplumbingwg/multus-cni",
       "target": "harbor.isuanova.com/mirrors/ghcr.io/k8snetworkplumbingwg/multus-cni",
@@ -1082,9 +929,6 @@
     {
       "id": "networking/nginx",
       "name": "nginx",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "networking",
       "source": "docker.io/library/nginx",
       "target": "harbor.isuanova.com/mirrors/docker.io/library/nginx",
@@ -1114,9 +958,6 @@
     {
       "id": "observability/node-exporter",
       "name": "node-exporter",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "quay.io/prometheus/node-exporter",
       "target": "harbor.isuanova.com/mirrors/quay.io/prometheus/node-exporter",
@@ -1133,9 +974,6 @@
     {
       "id": "kubernetes/node-feature-discovery",
       "name": "node-feature-discovery",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/nfd/node-feature-discovery",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/nfd/node-feature-discovery",
@@ -1158,9 +996,6 @@
     {
       "id": "gpu/nvidia-driver",
       "name": "nvidia-driver",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/driver",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/driver",
@@ -1177,9 +1012,6 @@
     {
       "id": "kubernetes/pause",
       "name": "pause",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "registry.k8s.io/pause",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/pause",
@@ -1196,9 +1028,6 @@
     {
       "id": "observability/perses",
       "name": "perses",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "docker.io/persesdev/perses",
       "target": "harbor.isuanova.com/mirrors/docker.io/persesdev/perses",
@@ -1215,9 +1044,6 @@
     {
       "id": "observability/perses-operator",
       "name": "perses-operator",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "docker.io/persesdev/perses-operator",
       "target": "harbor.isuanova.com/mirrors/docker.io/persesdev/perses-operator",
@@ -1234,9 +1060,6 @@
     {
       "id": "databases/postgresql",
       "name": "postgresql",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "databases",
       "source": "ghcr.io/cloudnative-pg/postgresql",
       "target": "harbor.isuanova.com/mirrors/ghcr.io/cloudnative-pg/postgresql",
@@ -1253,9 +1076,6 @@
     {
       "id": "observability/prometheus",
       "name": "prometheus",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "quay.io/prometheus/prometheus",
       "target": "harbor.isuanova.com/mirrors/quay.io/prometheus/prometheus",
@@ -1272,9 +1092,6 @@
     {
       "id": "observability/prometheus-config-reloader",
       "name": "prometheus-config-reloader",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "quay.io/prometheus-operator/prometheus-config-reloader",
       "target": "harbor.isuanova.com/mirrors/quay.io/prometheus-operator/prometheus-config-reloader",
@@ -1291,9 +1108,6 @@
     {
       "id": "observability/prometheus-operator",
       "name": "prometheus-operator",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "quay.io/prometheus-operator/prometheus-operator",
       "target": "harbor.isuanova.com/mirrors/quay.io/prometheus-operator/prometheus-operator",
@@ -1310,9 +1124,6 @@
     {
       "id": "gpu/rdma-shared-dev-plugin",
       "name": "rdma-shared-dev-plugin",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "ghcr.io/mellanox/k8s-rdma-shared-dev-plugin",
       "target": "harbor.isuanova.com/mirrors/ghcr.io/mellanox/k8s-rdma-shared-dev-plugin",
@@ -1329,9 +1140,6 @@
     {
       "id": "databases/redis",
       "name": "redis",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "databases",
       "source": "quay.io/opstree/redis",
       "target": "harbor.isuanova.com/mirrors/quay.io/opstree/redis",
@@ -1355,9 +1163,6 @@
     {
       "id": "databases/redis-exporter",
       "name": "redis-exporter",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "databases",
       "source": "quay.io/oliver006/redis_exporter",
       "target": "harbor.isuanova.com/mirrors/quay.io/oliver006/redis_exporter",
@@ -1381,9 +1186,6 @@
     {
       "id": "databases/redis-operator",
       "name": "redis-operator",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "databases",
       "source": "quay.io/opstree/redis-operator",
       "target": "harbor.isuanova.com/mirrors/quay.io/opstree/redis-operator",
@@ -1400,9 +1202,6 @@
     {
       "id": "databases/redis-sentinel",
       "name": "redis-sentinel",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "databases",
       "source": "quay.io/opstree/redis-sentinel",
       "target": "harbor.isuanova.com/mirrors/quay.io/opstree/redis-sentinel",
@@ -1426,9 +1225,6 @@
     {
       "id": "kubernetes/registry",
       "name": "registry",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "kubernetes",
       "source": "docker.io/library/registry",
       "target": "harbor.isuanova.com/mirrors/docker.io/library/registry",
@@ -1451,9 +1247,6 @@
     {
       "id": "storage/rook-ceph",
       "name": "rook-ceph",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "docker.io/rook/ceph",
       "target": "harbor.isuanova.com/mirrors/docker.io/rook/ceph",
@@ -1477,9 +1270,6 @@
     {
       "id": "gpu/sandbox-device-plugin",
       "name": "sandbox-device-plugin",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/cloud-native/nvidia-sandbox-device-plugin",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/cloud-native/nvidia-sandbox-device-plugin",
@@ -1496,9 +1286,6 @@
     {
       "id": "storage/snapshot-controller",
       "name": "snapshot-controller",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "storage",
       "source": "registry.k8s.io/sig-storage/snapshot-controller",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/snapshot-controller",
@@ -1522,9 +1309,6 @@
     {
       "id": "observability/thanos",
       "name": "thanos",
-      "consumers": [
-        "cubestack-platform"
-      ],
       "category": "observability",
       "source": "quay.io/thanos/thanos",
       "target": "harbor.isuanova.com/mirrors/quay.io/thanos/thanos",
@@ -1548,9 +1332,6 @@
     {
       "id": "gpu/vgpu-device-manager",
       "name": "vgpu-device-manager",
-      "consumers": [
-        "cubestack-base"
-      ],
       "category": "gpu",
       "source": "nvcr.io/nvidia/cloud-native/vgpu-device-manager",
       "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/cloud-native/vgpu-device-manager",

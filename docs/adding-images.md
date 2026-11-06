@@ -61,6 +61,7 @@ Registry 返回的 `Docker-Content-Digest` 一致。
 
 要点：
 
+- 删除旧 tag 前确认没有发布线还在 pin 它；当前不用的旧版本可以移除。
 - `source` / `target` **不带** tag 或 digest，版本写在 `versions[]`。
 - `target` 的第三段必须是源 Registry 主机名。
 - 同一镜像需要保留多个版本时，直接列多个 `versions[]` 条目。
@@ -79,7 +80,8 @@ Registry 返回的 `Docker-Content-Digest` 一致。
 ## 5. 本地验证
 
 ```bash
-make validate                       # 静态校验，无需凭据
+make index                          # 重新生成 index.json（改完 images/ 后必跑）
+make validate                       # 静态校验（含 index.json），无需凭据
 make check-sources ARGS="--image my-image"   # 只读探测：tag 是否存在、架构是否齐全
 make dry-run ARGS="--image my-image"         # 确认目标地址
 ```
@@ -88,8 +90,11 @@ make dry-run ARGS="--image my-image"         # 确认目标地址
 
 ## 6. PR 检查清单
 
+- [ ] `make index` 已执行，`index.json` 与清单一致
 - [ ] `make validate` 通过
 - [ ] `make check-sources` 通过（tag 存在、架构齐全）
+- [ ] `index.json` 与清单一致
+- [ ] 没有删除仍被发布线引用的旧 tag
 - [ ] 目标路径包含源 Registry 主机名
 - [ ] 没有引入 `latest`
 - [ ] 生产镜像已钉 digest

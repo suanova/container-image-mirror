@@ -162,3 +162,63 @@ jobs:
 
       - name: Generate report
         run: ./scripts/generate-report.sh
+
+  # Notify downstream consumers after a successful sync on main. Targets live in
+  # vars.MIRROR_NOTIFY_TARGETS (JSON), so this public repository does not embed
+  # product or private repository names.
+  notify:
+    needs: [plan, sync]
+    if: >-
+      always() &&
+      needs.plan.result == 'success' &&
+      needs.sync.result == 'success' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || inputs.dry_run != true)
+    runs-on: ubuntu-latest
+    env:
+      MIRROR_APP_ID: ${{ vars.MIRROR_APP_ID }}
+      MIRROR_APP_PRIVATE_KEY: ${{ secrets.MIRROR_APP_PRIVATE_KEY }}
+      MIRROR_NOTIFY_TARGETS: ${{ vars.MIRROR_NOTIFY_TARGETS }}
+    steps:
+      - name: Skip dispatch when notifications are not configured
+        if: env.MIRROR_APP_ID == '' || env.MIRROR_APP_PRIVATE_KEY == '' || env.MIRROR_NOTIFY_TARGETS == ''
+        run: |
+          echo "::warning::MIRROR_APP_ID / MIRROR_APP_PRIVATE_KEY / MIRROR_NOTIFY_TARGETS are not configured; skipping mirror-updated dispatch"
+
+      - name: Resolve notification targets
+        id: targets
+        if: env.MIRROR_APP_ID != '' && env.MIRROR_APP_PRIVATE_KEY != '' && env.MIRROR_NOTIFY_TARGETS != ''
+        run: |
+          set -euo pipefail
+          jq -e 'type == "array" and length > 0 and all(.[]; type == "string" and length > 0)' \
+            <<<"${MIRROR_NOTIFY_TARGETS}" >/dev/null \
+            || { echo "::error::MIRROR_NOTIFY_TARGETS must be a non-empty JSON array of repository names"; exit 1; }
+          repos=$(jq -r 'unique | join(",")' <<<"${MIRROR_NOTIFY_TARGETS}")
+          echo "repos=${repos}" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub App token
+        id: app
+        if: steps.targets.outputs.repos != ''
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ env.MIRROR_APP_ID }}
+          private-key: ${{ env.MIRROR_APP_PRIVATE_KEY }}
+          owner: suanova
+          repositories: ${{ steps.targets.outputs.repos }}
+
+      - name: Dispatch mirror-updated
+        if: steps.app.outputs.token != ''
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          set -euo pipefail
+          jq -r 'unique[]' <<<"${MIRROR_NOTIFY_TARGETS}" | while IFS= read -r repo; do
+            [ -n "${repo}" ] || continue
+            payload=$(jq -n \
+              --arg sha "$GITHUB_SHA" \
+              --arg ref "$GITHUB_REF_NAME" \
+              '{event_type: "mirror-updated",
+                client_payload: {catalog_commit: $sha, ref: $ref}}')
+            printf '%s' "$payload" | gh api --method POST "repos/${repo}/dispatches" --input -
+            echo "dispatched mirror-updated to ${repo} at ${GITHUB_SHA}"
+          done

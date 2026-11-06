@@ -10,7 +10,8 @@ SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 # shellcheck source=scripts/lib.sh
 source "${SCRIPT_DIR}/lib.sh"
 
-require_cmd yq jq
+require_cmd yq jq python3
+python3 -c 'import yaml' 2>/dev/null || die "PyYAML is required (python3 -m pip install pyyaml)"
 
 [[ -f $POLICY_FILE ]] || die "policy file not found: $POLICY_FILE"
 [[ -f $REGISTRY_FILE ]] || die "registry file not found: $REGISTRY_FILE"
@@ -94,6 +95,17 @@ while IFS= read -r dup; do
     violations+=("duplicate target reference across manifests: ${dup}")
   fi
 done < <(printf '%s' "$target_refs" | sort | uniq -d)
+
+# --- generated catalog ----------------------------------------------------
+# index.json is committed so downstream consumers can read it at a pinned
+# commit. Keep it in sync with images/*.yaml; `make index` regenerates it.
+_index_tmp="$(mktemp)"
+if ! python3 "${SCRIPT_DIR}/generate-index.py" --output "${_index_tmp}" >/dev/null 2>&1; then
+  violations+=("index.json: generation failed (run make index to see the error)")
+elif ! diff -q "${ROOT_DIR}/index.json" "${_index_tmp}" >/dev/null 2>&1; then
+  violations+=("index.json: out of date; run 'make index' and commit the result")
+fi
+rm -f "${_index_tmp}"
 
 # --- result ---------------------------------------------------------------
 

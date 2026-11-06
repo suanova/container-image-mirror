@@ -1,0 +1,1193 @@
+{
+  "schema": 1,
+  "images": [
+    {
+      "id": "networking/ai-gateway-controller",
+      "name": "ai-gateway-controller",
+      "category": "networking",
+      "source": "docker.io/envoyproxy/ai-gateway-controller",
+      "target": "harbor.isuanova.com/mirrors/docker.io/envoyproxy/ai-gateway-controller",
+      "versions": [
+        {
+          "tag": "v1.2.0",
+          "digest": "sha256:4d663346354321a677c4e942017277f690d0d7715f8e3348a535db174679e4f8",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/ai-gateway-extproc",
+      "name": "ai-gateway-extproc",
+      "category": "networking",
+      "source": "docker.io/envoyproxy/ai-gateway-extproc",
+      "target": "harbor.isuanova.com/mirrors/docker.io/envoyproxy/ai-gateway-extproc",
+      "versions": [
+        {
+          "tag": "v1.2.0",
+          "digest": "sha256:4af909a6f64ee6b97968995fec88c4fd3c41d020c6bcb7ca07136fdfffaa598c",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/alertmanager",
+      "name": "alertmanager",
+      "category": "observability",
+      "source": "quay.io/prometheus/alertmanager",
+      "target": "harbor.isuanova.com/mirrors/quay.io/prometheus/alertmanager",
+      "versions": [
+        {
+          "tag": "v0.34.2",
+          "digest": "sha256:39d8bb3966c694a124428a3a88fbcffd40bd069129ecd47c059f8a3f17c55f3b",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/busybox",
+      "name": "busybox",
+      "category": "kubernetes",
+      "source": "docker.io/library/busybox",
+      "target": "harbor.isuanova.com/mirrors/docker.io/library/busybox",
+      "versions": [
+        {
+          "tag": "1.38.0",
+          "digest": "sha256:a46257e06c82ad85242d0d38077d0a52d9896389ca60a1a59d3463db586e5fa4",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/calico-cni",
+      "name": "calico-cni",
+      "category": "networking",
+      "source": "quay.io/calico/cni",
+      "target": "harbor.isuanova.com/mirrors/quay.io/calico/cni",
+      "versions": [
+        {
+          "tag": "v3.32.2",
+          "digest": "sha256:0ef740bc587f25565905adf1d1f61a7faff0d571c449c6bdd789feed743d3ef7",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/calico-kube-controllers",
+      "name": "calico-kube-controllers",
+      "category": "networking",
+      "source": "quay.io/calico/kube-controllers",
+      "target": "harbor.isuanova.com/mirrors/quay.io/calico/kube-controllers",
+      "versions": [
+        {
+          "tag": "v3.32.2",
+          "digest": "sha256:7870b67ebb13fabc3005252b44fe6e78b21635649bd3072b80afa1684b6565d0",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/calico-node",
+      "name": "calico-node",
+      "category": "networking",
+      "source": "quay.io/calico/node",
+      "target": "harbor.isuanova.com/mirrors/quay.io/calico/node",
+      "versions": [
+        {
+          "tag": "v3.32.2",
+          "digest": "sha256:99b03fe91e8bfbcb153ae65ef4b701b24ce541ffdd74ff314eb041096008f7fd",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/cc-manager",
+      "name": "cc-manager",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/cloud-native/k8s-cc-manager",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/cloud-native/k8s-cc-manager",
+      "versions": [
+        {
+          "tag": "v0.4.4",
+          "digest": "sha256:09b376f2bb829819549a4b27086b532047ec51ea5585ca22b96c26c2939e92bd",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/ceph",
+      "name": "ceph",
+      "category": "storage",
+      "source": "quay.io/ceph/ceph",
+      "target": "harbor.isuanova.com/mirrors/quay.io/ceph/ceph",
+      "versions": [
+        {
+          "tag": "v20.2.2",
+          "digest": "sha256:6b4b5ae33acd3d736eb26d2a19238bce71a22f9cfb99cca887ba6312d0957644",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/ceph-csi",
+      "name": "ceph-csi",
+      "category": "storage",
+      "source": "quay.io/cephcsi/cephcsi",
+      "target": "harbor.isuanova.com/mirrors/quay.io/cephcsi/cephcsi",
+      "versions": [
+        {
+          "tag": "v3.18.1",
+          "digest": "sha256:a8c0653a9565049ee7b36a585753e5e0e8fe2e4e5a67e9db3a5f8d9d7e890635",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/ceph-csi-operator",
+      "name": "ceph-csi-operator",
+      "category": "storage",
+      "source": "quay.io/cephcsi/ceph-csi-operator",
+      "target": "harbor.isuanova.com/mirrors/quay.io/cephcsi/ceph-csi-operator",
+      "versions": [
+        {
+          "tag": "v1.1.0",
+          "digest": "sha256:c42c95c36fa257266571ff7542c3e350bb93b152f8865538c8929eb2e2dbe7c6",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "databases/cloudnative-pg-operator",
+      "name": "cloudnative-pg-operator",
+      "category": "databases",
+      "source": "ghcr.io/cloudnative-pg/cloudnative-pg",
+      "target": "harbor.isuanova.com/mirrors/ghcr.io/cloudnative-pg/cloudnative-pg",
+      "versions": [
+        {
+          "tag": "1.30.1",
+          "digest": "sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/cluster-proportional-autoscaler",
+      "name": "cluster-proportional-autoscaler",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/cpa/cluster-proportional-autoscaler",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/cpa/cluster-proportional-autoscaler",
+      "versions": [
+        {
+          "tag": "v1.10.3",
+          "digest": "sha256:a4d0ab78d5e2ec356c981f361a5ff7012b21ad353b4a980e1ca30c11dda6564b",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/container-toolkit",
+      "name": "container-toolkit",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/k8s/container-toolkit",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/k8s/container-toolkit",
+      "versions": [
+        {
+          "tag": "v1.20.1",
+          "digest": "sha256:00a422252dd875b112f5974321c2feebbdf11c338f8ad131e5ce18e5b3a3bfac",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/coredns",
+      "name": "coredns",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/coredns/coredns",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/coredns/coredns",
+      "versions": [
+        {
+          "tag": "v1.12.4",
+          "digest": "sha256:986f04c2e15e147d00bdd51e8c51bcef3644b13ff806be7d2ff1b261d6dfbae1",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/csi-addons-sidecar",
+      "name": "csi-addons-sidecar",
+      "category": "storage",
+      "source": "quay.io/csiaddons/k8s-sidecar",
+      "target": "harbor.isuanova.com/mirrors/quay.io/csiaddons/k8s-sidecar",
+      "versions": [
+        {
+          "tag": "v0.15.1",
+          "digest": "sha256:f342ecd54c9c1ff7b42582c54f4deaa64310f96bcf73891d88744da0f72426b3",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/csi-attacher",
+      "name": "csi-attacher",
+      "category": "storage",
+      "source": "registry.k8s.io/sig-storage/csi-attacher",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-attacher",
+      "versions": [
+        {
+          "tag": "v4.13.0",
+          "digest": "sha256:d1a26170efed45491074ca4545c81844eee2b9043fb885ac01fb4aed6f8b72d2",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/csi-node-driver-registrar",
+      "name": "csi-node-driver-registrar",
+      "category": "storage",
+      "source": "registry.k8s.io/sig-storage/csi-node-driver-registrar",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-node-driver-registrar",
+      "versions": [
+        {
+          "tag": "v2.18.0",
+          "digest": "sha256:b7fefd08651f00ac4df1a196ed4c621c2451fbb899297fe9fad9e36c667af0c0",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/csi-provisioner",
+      "name": "csi-provisioner",
+      "category": "storage",
+      "source": "registry.k8s.io/sig-storage/csi-provisioner",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-provisioner",
+      "versions": [
+        {
+          "tag": "v6.3.0",
+          "digest": "sha256:a4b0b1a37605b7b04a293e136edf7006ec1786a8eb3f4e5a945f81d667dcc371",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/csi-resizer",
+      "name": "csi-resizer",
+      "category": "storage",
+      "source": "registry.k8s.io/sig-storage/csi-resizer",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-resizer",
+      "versions": [
+        {
+          "tag": "v2.2.1",
+          "digest": "sha256:ea1d25e23479000c7e8eeb92d827df66258df4e482ca054c5e7ce3fc0f5c41a5",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/csi-snapshot-metadata",
+      "name": "csi-snapshot-metadata",
+      "category": "storage",
+      "source": "registry.k8s.io/sig-storage/csi-snapshot-metadata",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-snapshot-metadata",
+      "versions": [
+        {
+          "tag": "v1.1.0",
+          "digest": "sha256:8069b3bc03f21fe804f6f362c26037598b9f947a9e3e9d60336988ca7c07f61e",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/csi-snapshotter",
+      "name": "csi-snapshotter",
+      "category": "storage",
+      "source": "registry.k8s.io/sig-storage/csi-snapshotter",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-snapshotter",
+      "versions": [
+        {
+          "tag": "v8.6.0",
+          "digest": "sha256:42af0929bcd60a43499825c078a60ff0534e08af8fbeb283aa391be40feb9f3e",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/cuda-sample",
+      "name": "cuda-sample",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/k8s/cuda-sample",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/k8s/cuda-sample",
+      "versions": [
+        {
+          "tag": "vectoradd-cuda12.5.0-ubuntu22.04",
+          "digest": "sha256:7c7540bdf1f942d4fb6db97069fd6c289471b54ac29e3c7fcdf914cf77af7d41",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/dcgm-exporter",
+      "name": "dcgm-exporter",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/k8s/dcgm-exporter",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/k8s/dcgm-exporter",
+      "versions": [
+        {
+          "tag": "4.6.1-4.8.4-distroless",
+          "digest": "sha256:148b0c025e5f2850256816fa33754fbf4733b7a086697a95613fc0ba3db5b003",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/dns-node-cache",
+      "name": "dns-node-cache",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/dns/k8s-dns-node-cache",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/dns/k8s-dns-node-cache",
+      "versions": [
+        {
+          "tag": "1.25.0",
+          "digest": "sha256:c10362235fc2a5c4cd8f2c4cd4b79221026ba4f69005b1c640a6ba48410f7fa4",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/driver-manager",
+      "name": "driver-manager",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/cloud-native/k8s-driver-manager",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/cloud-native/k8s-driver-manager",
+      "versions": [
+        {
+          "tag": "v0.12.1",
+          "digest": "sha256:37e6bf0cf02b5888288a173353b858da8823cc9f9fb9c6e8d6d1e2cf5bfb16c8",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/envoy",
+      "name": "envoy",
+      "category": "networking",
+      "source": "docker.io/envoyproxy/envoy",
+      "target": "harbor.isuanova.com/mirrors/docker.io/envoyproxy/envoy",
+      "versions": [
+        {
+          "tag": "distroless-v1.39.5",
+          "digest": "sha256:9d84a586119a27b50437dbb01eccd4722832741539b1ed53c8e9d6da6067a6e0",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/envoy-gateway",
+      "name": "envoy-gateway",
+      "category": "networking",
+      "source": "docker.io/envoyproxy/gateway",
+      "target": "harbor.isuanova.com/mirrors/docker.io/envoyproxy/gateway",
+      "versions": [
+        {
+          "tag": "v1.9.3",
+          "digest": "sha256:192fc9bdadb6d2462e8cf7bd702ce3dd9648f3310c6038787448a1f509b7cd9f",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/envoy-ratelimit",
+      "name": "envoy-ratelimit",
+      "category": "networking",
+      "source": "docker.io/envoyproxy/ratelimit",
+      "target": "harbor.isuanova.com/mirrors/docker.io/envoyproxy/ratelimit",
+      "versions": [
+        {
+          "tag": "5ae0682e",
+          "digest": "sha256:b95206e32b1a5f824fb06062fbb85bbdfb7f5de54135e92afe8462f22c979681",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/etcd",
+      "name": "etcd",
+      "category": "kubernetes",
+      "source": "quay.io/coreos/etcd",
+      "target": "harbor.isuanova.com/mirrors/quay.io/coreos/etcd",
+      "versions": [
+        {
+          "tag": "v3.6.16",
+          "digest": "sha256:a9c7cc12156f4b26ca41f0b57ba5b76c45037ff6c1e47ea3d68cb7908d48a965",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/gpu-operator",
+      "name": "gpu-operator",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/gpu-operator",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/gpu-operator",
+      "versions": [
+        {
+          "tag": "v26.7.2",
+          "digest": "sha256:02933b43d286d1321cd0dadd460b9ae8f5e5c0ee99a087e2d10254febc94ba45",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/grafana",
+      "name": "grafana",
+      "category": "observability",
+      "source": "docker.io/grafana/grafana",
+      "target": "harbor.isuanova.com/mirrors/docker.io/grafana/grafana",
+      "versions": [
+        {
+          "tag": "13.3.0-distroless",
+          "digest": "sha256:540b8afb775bf34aefce417e4329039daa5d44b6f2fbda6881397b1b247ca7df",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/k8s-device-plugin",
+      "name": "k8s-device-plugin",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/k8s-device-plugin",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/k8s-device-plugin",
+      "versions": [
+        {
+          "tag": "v0.20.1",
+          "digest": "sha256:27c1b2553a690ca3d29889dcd61df97525d46f58272c0be8dc63c2b18f120075",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/kiwigrid-k8s-sidecar-quay",
+      "name": "kiwigrid-k8s-sidecar-quay",
+      "category": "observability",
+      "source": "quay.io/kiwigrid/k8s-sidecar",
+      "target": "harbor.isuanova.com/mirrors/quay.io/kiwigrid/k8s-sidecar",
+      "versions": [
+        {
+          "tag": "2.14.3",
+          "digest": "sha256:52d311dcedd587421a236c4d6c621f05614c40a51386e955e0699dca97ec0880",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/kube-apiserver",
+      "name": "kube-apiserver",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/kube-apiserver",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/kube-apiserver",
+      "versions": [
+        {
+          "tag": "v1.35.8",
+          "digest": "sha256:6a7b73e718540d2c097cbcdc84c0f2cffad7a51ebccaf7f0b8cceb464715e1d9",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/kube-controller-manager",
+      "name": "kube-controller-manager",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/kube-controller-manager",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/kube-controller-manager",
+      "versions": [
+        {
+          "tag": "v1.35.8",
+          "digest": "sha256:b27c0bf88a81437747b257a1e6d019a921ec3a97b724e67dfc180efe3125998b",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/kube-proxy",
+      "name": "kube-proxy",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/kube-proxy",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/kube-proxy",
+      "versions": [
+        {
+          "tag": "v1.35.8",
+          "digest": "sha256:5d641d163114b212229b8bceba9f859cff1265ba40e02a2bb0ec8743f56c1033",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/kube-rbac-proxy",
+      "name": "kube-rbac-proxy",
+      "category": "observability",
+      "source": "quay.io/brancz/kube-rbac-proxy",
+      "target": "harbor.isuanova.com/mirrors/quay.io/brancz/kube-rbac-proxy",
+      "versions": [
+        {
+          "tag": "v0.23.1",
+          "digest": "sha256:c280684dd23793fb2f287d1f4efc84b7800b3e01205d770b98694827bfe514cb",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/kube-scheduler",
+      "name": "kube-scheduler",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/kube-scheduler",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/kube-scheduler",
+      "versions": [
+        {
+          "tag": "v1.35.8",
+          "digest": "sha256:f4334826c53876b700f73cd06a69c405c6f882a4116c5813786e046ee6eca1ac",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/kube-state-metrics",
+      "name": "kube-state-metrics",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/kube-state-metrics/kube-state-metrics",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/kube-state-metrics/kube-state-metrics",
+      "versions": [
+        {
+          "tag": "v2.20.0",
+          "digest": "sha256:42cfe3723a5f058171c627537fb57a3ea0f26e4380fa18555a95cb1a1b4cfc5b",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/kube-vip",
+      "name": "kube-vip",
+      "category": "kubernetes",
+      "source": "ghcr.io/kube-vip/kube-vip",
+      "target": "harbor.isuanova.com/mirrors/ghcr.io/kube-vip/kube-vip",
+      "versions": [
+        {
+          "tag": "v1.0.3",
+          "digest": "sha256:4e2791cc0238ae01b3986d827f4d568a25d846c94bab51238fe6241281a27113",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
+          "tag": "v1.3.1",
+          "digest": "sha256:1962f9daf226503f7e6b107f595cb28b7917fd2d0113957075e19a3e5a6c1e33",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/kube-webhook-certgen",
+      "name": "kube-webhook-certgen",
+      "category": "kubernetes",
+      "source": "ghcr.io/jkroepke/kube-webhook-certgen",
+      "target": "harbor.isuanova.com/mirrors/ghcr.io/jkroepke/kube-webhook-certgen",
+      "versions": [
+        {
+          "tag": "1.11.0",
+          "digest": "sha256:778d97dc3986355625e14392419b3364c487a7c807d4d86ddad1df369129b082",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/kubevirt-gpu-device-plugin",
+      "name": "kubevirt-gpu-device-plugin",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/kubevirt-gpu-device-plugin",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/kubevirt-gpu-device-plugin",
+      "versions": [
+        {
+          "tag": "v1.6.0",
+          "digest": "sha256:367c597799aa6925f5bd2bc4bcdc45c26f018d13cdc2ce9aaf1ca07c492c6d9e",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/local-path-provisioner",
+      "name": "local-path-provisioner",
+      "category": "kubernetes",
+      "source": "docker.io/rancher/local-path-provisioner",
+      "target": "harbor.isuanova.com/mirrors/docker.io/rancher/local-path-provisioner",
+      "versions": [
+        {
+          "tag": "v0.0.37",
+          "digest": "sha256:e757967a5ec338f6a9b371c5a9688bedaa8c3578ea3dd4db329ea0084be0a86f",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/local-volume-provisioner",
+      "name": "local-volume-provisioner",
+      "category": "storage",
+      "source": "registry.k8s.io/sig-storage/local-volume-provisioner",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/local-volume-provisioner",
+      "versions": [
+        {
+          "tag": "v2.10.0",
+          "digest": "sha256:5cf1c5c45d68838c052662b010643bcf4b06a23ff62d1a6911960626adac47d1",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/lws",
+      "name": "lws",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/lws/lws",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/lws/lws",
+      "versions": [
+        {
+          "tag": "v1.0.0",
+          "digest": "sha256:7aa4f6d26609d9f9650054227600337d240181f9d84cb2450474de3bd1e962a9",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/metallb-controller",
+      "name": "metallb-controller",
+      "category": "networking",
+      "source": "quay.io/metallb/controller",
+      "target": "harbor.isuanova.com/mirrors/quay.io/metallb/controller",
+      "versions": [
+        {
+          "tag": "v0.13.9",
+          "digest": "sha256:c9ffd7215dcf93ff69b474c9bc5889ac69da395c62bd693110ba3b57fcecc28c",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/metallb-speaker",
+      "name": "metallb-speaker",
+      "category": "networking",
+      "source": "quay.io/metallb/speaker",
+      "target": "harbor.isuanova.com/mirrors/quay.io/metallb/speaker",
+      "versions": [
+        {
+          "tag": "v0.13.9",
+          "digest": "sha256:ed242e213112bf5c70978cd4abf3173582292daa692ee2ed07497e32275a77a5",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/metrics-server",
+      "name": "metrics-server",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/metrics-server/metrics-server",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/metrics-server/metrics-server",
+      "versions": [
+        {
+          "tag": "v0.9.1",
+          "digest": "sha256:9b0ba1926e1d3089673f45461c3c1416109dea33b3ba3434048defd380df329b",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/mig-manager",
+      "name": "mig-manager",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/cloud-native/k8s-mig-manager",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/cloud-native/k8s-mig-manager",
+      "versions": [
+        {
+          "tag": "v0.15.1",
+          "digest": "sha256:c1674fa2f46012dc425539f7fcac6445dce13bc81a05e4f91e311c7b8c27bcaf",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/multus-cni",
+      "name": "multus-cni",
+      "category": "networking",
+      "source": "ghcr.io/k8snetworkplumbingwg/multus-cni",
+      "target": "harbor.isuanova.com/mirrors/ghcr.io/k8snetworkplumbingwg/multus-cni",
+      "versions": [
+        {
+          "tag": "v4.2.2-thick",
+          "digest": "sha256:a60a21ee1d00c9f215b0b2fa03b3d5e384ab7ddb9ea0d231d36aef220e95a69c",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking/nginx",
+      "name": "nginx",
+      "category": "networking",
+      "source": "docker.io/library/nginx",
+      "target": "harbor.isuanova.com/mirrors/docker.io/library/nginx",
+      "versions": [
+        {
+          "tag": "1.27",
+          "digest": "sha256:6784fb0834aa7dbbe12e3d7471e69c290df3e6ba810dc38b34ae33d3c1c05f7d",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
+          "tag": "1.30.6-alpine",
+          "digest": "sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/node-exporter",
+      "name": "node-exporter",
+      "category": "observability",
+      "source": "quay.io/prometheus/node-exporter",
+      "target": "harbor.isuanova.com/mirrors/quay.io/prometheus/node-exporter",
+      "versions": [
+        {
+          "tag": "v1.12.1-distroless",
+          "digest": "sha256:8c9bac11973b94b59be88d6e11fee4429aa743c8846cdc75d65b18db33f6a106",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/node-feature-discovery",
+      "name": "node-feature-discovery",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/nfd/node-feature-discovery",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/nfd/node-feature-discovery",
+      "versions": [
+        {
+          "tag": "v0.20.1",
+          "digest": "sha256:6fc5c9af9176e1acb5ce57a4a1d0c0d3eb25cd34f5bdd0efefebf0efe45a8379",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/nvidia-driver",
+      "name": "nvidia-driver",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/driver",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/driver",
+      "versions": [
+        {
+          "tag": "595-5.15.0-186-generic-ubuntu22.04",
+          "digest": "sha256:132ff748143e522eecf2da238a9e8764aad5c10611826a7ff536400f41d02060",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/pause",
+      "name": "pause",
+      "category": "kubernetes",
+      "source": "registry.k8s.io/pause",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/pause",
+      "versions": [
+        {
+          "tag": "3.10.1",
+          "digest": "sha256:278fb9dbcca9518083ad1e11276933a2e96f23de604a3a08cc3c80002767d24c",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/perses",
+      "name": "perses",
+      "category": "observability",
+      "source": "docker.io/persesdev/perses",
+      "target": "harbor.isuanova.com/mirrors/docker.io/persesdev/perses",
+      "versions": [
+        {
+          "tag": "v0.55.1",
+          "digest": "sha256:292605f009770f07aa17217e70f877fabbc74858d0af9054d395064e1c411c06",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/perses-operator",
+      "name": "perses-operator",
+      "category": "observability",
+      "source": "docker.io/persesdev/perses-operator",
+      "target": "harbor.isuanova.com/mirrors/docker.io/persesdev/perses-operator",
+      "versions": [
+        {
+          "tag": "v0.5.0",
+          "digest": "sha256:8f8d7b09caefc35777dc88b9e8823efb7232b1ce2869648575176e760d7b55bf",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "databases/postgresql",
+      "name": "postgresql",
+      "category": "databases",
+      "source": "ghcr.io/cloudnative-pg/postgresql",
+      "target": "harbor.isuanova.com/mirrors/ghcr.io/cloudnative-pg/postgresql",
+      "versions": [
+        {
+          "tag": "16.15-system-trixie",
+          "digest": "sha256:c19eac3ed7d86b0261ef5551c4daf9c61fba554a51664abe7c4f689f5b478993",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/prometheus",
+      "name": "prometheus",
+      "category": "observability",
+      "source": "quay.io/prometheus/prometheus",
+      "target": "harbor.isuanova.com/mirrors/quay.io/prometheus/prometheus",
+      "versions": [
+        {
+          "tag": "v3.15.1-distroless",
+          "digest": "sha256:451a845bae1d51622b41af1780eb2ad911bbb79a9855bc8e9bb67fabbc03f934",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/prometheus-config-reloader",
+      "name": "prometheus-config-reloader",
+      "category": "observability",
+      "source": "quay.io/prometheus-operator/prometheus-config-reloader",
+      "target": "harbor.isuanova.com/mirrors/quay.io/prometheus-operator/prometheus-config-reloader",
+      "versions": [
+        {
+          "tag": "v0.94.2",
+          "digest": "sha256:a1897c67478bc23434534e91ad3855280771196b1daf17144db9dbcb655bef71",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/prometheus-operator",
+      "name": "prometheus-operator",
+      "category": "observability",
+      "source": "quay.io/prometheus-operator/prometheus-operator",
+      "target": "harbor.isuanova.com/mirrors/quay.io/prometheus-operator/prometheus-operator",
+      "versions": [
+        {
+          "tag": "v0.94.2",
+          "digest": "sha256:c7edf0379b7271ef1705dce258d2bb73820e299cc95559369e9f6fc3321639ec",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/rdma-shared-dev-plugin",
+      "name": "rdma-shared-dev-plugin",
+      "category": "gpu",
+      "source": "ghcr.io/mellanox/k8s-rdma-shared-dev-plugin",
+      "target": "harbor.isuanova.com/mirrors/ghcr.io/mellanox/k8s-rdma-shared-dev-plugin",
+      "versions": [
+        {
+          "tag": "v1.5.4",
+          "digest": "sha256:97e10cbcdba89f295152b4d55cb266078764aacb7180938c7f840fb3d712f875",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "databases/redis",
+      "name": "redis",
+      "category": "databases",
+      "source": "quay.io/opstree/redis",
+      "target": "harbor.isuanova.com/mirrors/quay.io/opstree/redis",
+      "versions": [
+        {
+          "tag": "v7.4.11",
+          "digest": "sha256:115d8e221b1459b9f2db7d927ed40318ffac4eb2cddb5702974bce92d32b7a51",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "databases/redis-exporter",
+      "name": "redis-exporter",
+      "category": "databases",
+      "source": "quay.io/oliver006/redis_exporter",
+      "target": "harbor.isuanova.com/mirrors/quay.io/oliver006/redis_exporter",
+      "versions": [
+        {
+          "tag": "v1.97.0",
+          "digest": "sha256:f5f903fbe77571d455ede0453b084d6840bc62fc105efac001034421cab83b99",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "databases/redis-operator",
+      "name": "redis-operator",
+      "category": "databases",
+      "source": "quay.io/opstree/redis-operator",
+      "target": "harbor.isuanova.com/mirrors/quay.io/opstree/redis-operator",
+      "versions": [
+        {
+          "tag": "v0.26.0",
+          "digest": "sha256:1c6818e5e50553f9f3c1b91a8824ae5c1999a0c9416c794ca51431b7f0cb48c3",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "databases/redis-sentinel",
+      "name": "redis-sentinel",
+      "category": "databases",
+      "source": "quay.io/opstree/redis-sentinel",
+      "target": "harbor.isuanova.com/mirrors/quay.io/opstree/redis-sentinel",
+      "versions": [
+        {
+          "tag": "v7.4.11",
+          "digest": "sha256:9aae9fadd987a72684d5e75f92081bd4a3df81726e713b47a71df8bae861cda6",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kubernetes/registry",
+      "name": "registry",
+      "category": "kubernetes",
+      "source": "docker.io/library/registry",
+      "target": "harbor.isuanova.com/mirrors/docker.io/library/registry",
+      "versions": [
+        {
+          "tag": "2.8.1",
+          "digest": "sha256:dbaa3e69f563fc146f3337eb9de422f74f6765bf0203c891ddfbd74a6f9b56eb",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
+          "tag": "3.1.2",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/rook-ceph",
+      "name": "rook-ceph",
+      "category": "storage",
+      "source": "docker.io/rook/ceph",
+      "target": "harbor.isuanova.com/mirrors/docker.io/rook/ceph",
+      "versions": [
+        {
+          "tag": "v1.21.1",
+          "digest": "sha256:a9882f8220542cf0106478a5c41fd444501d6adf6fa713350e76b6df6ca71fb6",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/sandbox-device-plugin",
+      "name": "sandbox-device-plugin",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/cloud-native/nvidia-sandbox-device-plugin",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/cloud-native/nvidia-sandbox-device-plugin",
+      "versions": [
+        {
+          "tag": "v0.0.5",
+          "digest": "sha256:5b59e2e534c804381eb0055f7e2511eea812bae33f1ea67e306dab64870454bb",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage/snapshot-controller",
+      "name": "snapshot-controller",
+      "category": "storage",
+      "source": "registry.k8s.io/sig-storage/snapshot-controller",
+      "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/snapshot-controller",
+      "versions": [
+        {
+          "tag": "v8.7.0",
+          "digest": "sha256:8511f417d0072efcd937aedd7cc79a937d5066e64ee17beb6097301c92742f19",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability/thanos",
+      "name": "thanos",
+      "category": "observability",
+      "source": "quay.io/thanos/thanos",
+      "target": "harbor.isuanova.com/mirrors/quay.io/thanos/thanos",
+      "versions": [
+        {
+          "tag": "v0.42.5",
+          "digest": "sha256:0a546b98a8dd47735456ab389983675ee363d68127e334937a9fceeea10da5e7",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpu/vgpu-device-manager",
+      "name": "vgpu-device-manager",
+      "category": "gpu",
+      "source": "nvcr.io/nvidia/cloud-native/vgpu-device-manager",
+      "target": "harbor.isuanova.com/mirrors/nvcr.io/nvidia/cloud-native/vgpu-device-manager",
+      "versions": [
+        {
+          "tag": "v0.5.1",
+          "digest": "sha256:a846793e78fac0d88156ee08f9835b9e29d99b0b316a165ea4a3acf0e27ad0fd",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    }
+  ]
+}

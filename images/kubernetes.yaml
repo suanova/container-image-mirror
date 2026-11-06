@@ -10,6 +10,13 @@ spec:
       - linux/amd64
 
   images:
+    - name: busybox
+      source: docker.io/library/busybox
+      target: harbor.isuanova.com/mirrors/docker.io/library/busybox
+      versions:
+        - tag: "1.38.0"
+          digest: sha256:a46257e06c82ad85242d0d38077d0a52d9896389ca60a1a59d3463db586e5fa4
+
     - name: registry
       source: docker.io/library/registry
       target: harbor.isuanova.com/mirrors/docker.io/library/registry
@@ -39,12 +46,17 @@ spec:
       target: harbor.isuanova.com/mirrors/ghcr.io/kube-vip/kube-vip
       versions:
         - tag: "v1.3.1"
+          digest: sha256:1962f9daf226503f7e6b107f595cb28b7917fd2d0113957075e19a3e5a6c1e33
+        # 2.1 still uses 1.0.3: kubespray download.yml pins kube_vip_version 1.0.3.
+        - tag: "v1.0.3"
+          digest: sha256:4e2791cc0238ae01b3986d827f4d568a25d846c94bab51238fe6241281a27113
 
     - name: etcd
       source: quay.io/coreos/etcd
       target: harbor.isuanova.com/mirrors/quay.io/coreos/etcd
       versions:
         - tag: "v3.6.16"
+          digest: sha256:a9c7cc12156f4b26ca41f0b57ba5b76c45037ff6c1e47ea3d68cb7908d48a965
 
     - name: coredns
       source: registry.k8s.io/coredns/coredns
@@ -114,12 +126,14 @@ spec:
       target: harbor.isuanova.com/mirrors/registry.k8s.io/metrics-server/metrics-server
       versions:
         - tag: "v0.9.1"
+          digest: sha256:9b0ba1926e1d3089673f45461c3c1416109dea33b3ba3434048defd380df329b
 
     - name: node-feature-discovery
       source: registry.k8s.io/nfd/node-feature-discovery
       target: harbor.isuanova.com/mirrors/registry.k8s.io/nfd/node-feature-discovery
       versions:
         - tag: "v0.20.1"
+          digest: sha256:6fc5c9af9176e1acb5ce57a4a1d0c0d3eb25cd34f5bdd0efefebf0efe45a8379
 
     - name: pause
       source: registry.k8s.io/pause

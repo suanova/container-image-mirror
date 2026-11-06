@@ -473,6 +473,13 @@
       "target": "harbor.isuanova.com/mirrors/quay.io/coreos/etcd",
       "versions": [
         {
+          "tag": "v3.6.14",
+          "digest": "sha256:dfd3941bf6ced5fdb700f9b2d98b22b7bca7ceee13aec16224f93ff30d9a59c4",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
           "tag": "v3.6.16",
           "digest": "sha256:a9c7cc12156f4b26ca41f0b57ba5b76c45037ff6c1e47ea3d68cb7908d48a965",
           "platforms": [
@@ -725,6 +732,13 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "v2.5.0",
+          "digest": "sha256:a112f1625aad84e4f425141199ab6ddbb49432c66e05dbbaab033d0ab2e8dfaf",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -784,6 +798,13 @@
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/metrics-server/metrics-server",
       "versions": [
         {
+          "tag": "v0.9.0",
+          "digest": "sha256:d9862115e7c7881280d3d75ca26bda8ffc0fc213315979575bf23ce9826205c0",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
           "tag": "v0.9.1",
           "digest": "sha256:9b0ba1926e1d3089673f45461c3c1416109dea33b3ba3434048defd380df329b",
           "platforms": [
@@ -839,6 +860,13 @@
           ]
         },
         {
+          "tag": "1.30.1-alpine",
+          "digest": "sha256:c819f83c54b0361f5557601bf5eb4943d09360e7a7fdf426afc466570f45874d",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
           "tag": "1.30.6-alpine",
           "digest": "sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949",
           "platforms": [
@@ -870,6 +898,13 @@
       "source": "registry.k8s.io/nfd/node-feature-discovery",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/nfd/node-feature-discovery",
       "versions": [
+        {
+          "tag": "v0.19.0",
+          "digest": "sha256:2fa1c99ad09bdf2c8ad97706a4ad2fd548c84d5ecd70ba32a6152c667b96c4d2",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
         {
           "tag": "v0.20.1",
           "digest": "sha256:6fc5c9af9176e1acb5ce57a4a1d0c0d3eb25cd34f5bdd0efefebf0efe45a8379",

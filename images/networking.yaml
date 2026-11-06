@@ -53,6 +53,9 @@ spec:
           digest: sha256:6784fb0834aa7dbbe12e3d7471e69c290df3e6ba810dc38b34ae33d3c1c05f7d
         - tag: "1.30.6-alpine"
           digest: sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949
+        # 2.1: pinned by the vendored kubespray v2.32.0 tree.
+        - tag: "1.30.1-alpine"
+          digest: sha256:c819f83c54b0361f5557601bf5eb4943d09360e7a7fdf426afc466570f45874d
 
     - name: multus-cni
       source: ghcr.io/k8snetworkplumbingwg/multus-cni

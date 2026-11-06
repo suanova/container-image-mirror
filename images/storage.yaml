@@ -93,9 +93,6 @@ spec:
       versions:
         - tag: "v2.10.0"
           digest: sha256:5cf1c5c45d68838c052662b010643bcf4b06a23ff62d1a6911960626adac47d1
-        # 2.1: pinned by the vendored kubespray v2.32.0 tree.
-        - tag: "v2.5.0"
-          digest: sha256:a112f1625aad84e4f425141199ab6ddbb49432c66e05dbbaab033d0ab2e8dfaf
 
     - name: snapshot-controller
       source: registry.k8s.io/sig-storage/snapshot-controller

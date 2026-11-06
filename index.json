@@ -732,13 +732,6 @@
           "platforms": [
             "linux/amd64"
           ]
-        },
-        {
-          "tag": "v2.5.0",
-          "digest": "sha256:a112f1625aad84e4f425141199ab6ddbb49432c66e05dbbaab033d0ab2e8dfaf",
-          "platforms": [
-            "linux/amd64"
-          ]
         }
       ]
     },

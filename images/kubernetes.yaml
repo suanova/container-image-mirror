@@ -40,24 +40,18 @@ spec:
       versions:
         - tag: "1.11.0"
           digest: sha256:778d97dc3986355625e14392419b3364c487a7c807d4d86ddad1df369129b082
-        - tag: "1.8.8"
-          digest: sha256:cd85a621724cd9043a5b46a784578fa159437712f920166389fce830554e1c44
 
     - name: kube-vip
       source: ghcr.io/kube-vip/kube-vip
       target: harbor.isuanova.com/mirrors/ghcr.io/kube-vip/kube-vip
       versions:
         - tag: "v1.3.1"
-        - tag: "v1.0.3"
-          digest: sha256:4e2791cc0238ae01b3986d827f4d568a25d846c94bab51238fe6241281a27113
 
     - name: etcd
       source: quay.io/coreos/etcd
       target: harbor.isuanova.com/mirrors/quay.io/coreos/etcd
       versions:
         - tag: "v3.6.16"
-        - tag: "v3.6.14"
-          digest: sha256:dfd3941bf6ced5fdb700f9b2d98b22b7bca7ceee13aec16224f93ff30d9a59c4
 
     - name: coredns
       source: registry.k8s.io/coredns/coredns
@@ -121,24 +115,18 @@ spec:
       versions:
         - tag: "v1.0.0"
           digest: sha256:7aa4f6d26609d9f9650054227600337d240181f9d84cb2450474de3bd1e962a9
-        - tag: "v0.10.0"
-          digest: sha256:46b1f3b6090d6983a0eab5b80385018d8ea74155ec09a67a17a2cf492d48aa4c
 
     - name: metrics-server
       source: registry.k8s.io/metrics-server/metrics-server
       target: harbor.isuanova.com/mirrors/registry.k8s.io/metrics-server/metrics-server
       versions:
         - tag: "v0.9.1"
-        - tag: "v0.9.0"
-          digest: sha256:d9862115e7c7881280d3d75ca26bda8ffc0fc213315979575bf23ce9826205c0
 
     - name: node-feature-discovery
       source: registry.k8s.io/nfd/node-feature-discovery
       target: harbor.isuanova.com/mirrors/registry.k8s.io/nfd/node-feature-discovery
       versions:
         - tag: "v0.20.1"
-        - tag: "v0.19.0"
-          digest: sha256:2fa1c99ad09bdf2c8ad97706a4ad2fd548c84d5ecd70ba32a6152c667b96c4d2
 
     - name: pause
       source: registry.k8s.io/pause

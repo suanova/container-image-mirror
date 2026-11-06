@@ -30,8 +30,6 @@ spec:
       versions:
         - tag: "v7.4.11"
           digest: sha256:115d8e221b1459b9f2db7d927ed40318ffac4eb2cddb5702974bce92d32b7a51
-        - tag: "v7.0.15"
-          digest: sha256:284c5a51803da9483d66d4f458b1fa9e8b8a67a6e55b9793a0b005cd39239356
 
     - name: redis-exporter
       source: quay.io/oliver006/redis_exporter
@@ -39,8 +37,6 @@ spec:
       versions:
         - tag: "v1.97.0"
           digest: sha256:f5f903fbe77571d455ede0453b084d6840bc62fc105efac001034421cab83b99
-        - tag: "v1.44.0"
-          digest: sha256:a63d2b6e946f8b82467ec5f853c24ab994b7cab5eacc3c3cbaa50e49bd27f235
 
     - name: redis-operator
       source: quay.io/opstree/redis-operator
@@ -55,5 +51,3 @@ spec:
       versions:
         - tag: "v7.4.11"
           digest: sha256:9aae9fadd987a72684d5e75f92081bd4a3df81726e713b47a71df8bae861cda6
-        - tag: "v7.0.15"
-          digest: sha256:db76095344deeda213aa714ac3ab8205658eb7b8e1206ba409bdec17f68175fa

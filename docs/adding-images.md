@@ -61,7 +61,7 @@ Registry 返回的 `Docker-Content-Digest` 一致。
 
 要点：
 
-- `versions[]` 只追加：只要还有发布线在用某个 tag，就不要删除它。
+- 删除旧 tag 前确认没有发布线还在 pin 它；当前不用的旧版本可以移除。
 - `source` / `target` **不带** tag 或 digest，版本写在 `versions[]`。
 - `target` 的第三段必须是源 Registry 主机名。
 - 同一镜像需要保留多个版本时，直接列多个 `versions[]` 条目。

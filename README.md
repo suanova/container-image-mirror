@@ -18,7 +18,7 @@ Kubernetes，也不管理自研镜像（`suanova/`、`suanova-private/`）。新
 | `platforms` 是断言而非过滤器 | `skopeo copy --all` 复制整个 manifest list；声明的架构缺失即失败 |
 | 只断言 `linux/amd64` | 集群只有 amd64 节点；不裁剪 manifest list，digest 仍与上游一致 |
 | 单次运行只写一个 authfile | 兼容旧版 skopeo，凭据不落盘到仓库 |
-| `versions[]` 只追加 | 多发布线可以各选 tag；旧 tag 不删，历史 pin 仍可解析 |
+| 版本不盲目清理 | 删除 tag 前确认没有发布线还在 pin 它；当前不用的旧版本可以移除 |
 | `index.json` 是机器可读目录 | 下游按 commit 读取，不需要解析 YAML；与清单在同一个 PR 更新 |
 
 ## 目录结构

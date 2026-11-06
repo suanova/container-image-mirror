@@ -16,8 +16,6 @@ spec:
       versions:
         - tag: "13.3.0-distroless"
           digest: sha256:540b8afb775bf34aefce417e4329039daa5d44b6f2fbda6881397b1b247ca7df
-        - tag: "13.2.2-distroless"
-          digest: sha256:69a5d2d957ca0bba434c160dcd4f2d07de9d6c756a0ba10ae7f52b72ced1e4cc
 
     - name: perses
       source: docker.io/persesdev/perses
@@ -46,8 +44,6 @@ spec:
       versions:
         - tag: "2.14.3"
           digest: sha256:52d311dcedd587421a236c4d6c621f05614c40a51386e955e0699dca97ec0880
-        - tag: "2.11.2"
-          digest: sha256:2912be006f62f9ea080194cf6d3afcd90daead8d101d0ba686a137a849f6a4f6
 
     - name: prometheus-config-reloader
       source: quay.io/prometheus-operator/prometheus-config-reloader
@@ -90,5 +86,3 @@ spec:
       versions:
         - tag: "v0.42.5"
           digest: sha256:0a546b98a8dd47735456ab389983675ee363d68127e334937a9fceeea10da5e7
-        - tag: "v0.42.4"
-          digest: sha256:b567818fe608067eb0f1d7c2c4fe361e7ad83c8a256234c97685f1d0bf670cc8

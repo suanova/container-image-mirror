@@ -11,6 +11,7 @@ spec:
 
   images:
     - name: ai-gateway-controller
+      consumers: [cubestack-platform]
       source: docker.io/envoyproxy/ai-gateway-controller
       target: harbor.isuanova.com/mirrors/docker.io/envoyproxy/ai-gateway-controller
       versions:
@@ -18,6 +19,7 @@ spec:
           digest: sha256:4d663346354321a677c4e942017277f690d0d7715f8e3348a535db174679e4f8
 
     - name: ai-gateway-extproc
+      consumers: [cubestack-platform]
       source: docker.io/envoyproxy/ai-gateway-extproc
       target: harbor.isuanova.com/mirrors/docker.io/envoyproxy/ai-gateway-extproc
       versions:
@@ -25,6 +27,7 @@ spec:
           digest: sha256:4af909a6f64ee6b97968995fec88c4fd3c41d020c6bcb7ca07136fdfffaa598c
 
     - name: envoy-gateway
+      consumers: [cubestack-platform]
       source: docker.io/envoyproxy/gateway
       target: harbor.isuanova.com/mirrors/docker.io/envoyproxy/gateway
       versions:
@@ -32,6 +35,7 @@ spec:
           digest: sha256:192fc9bdadb6d2462e8cf7bd702ce3dd9648f3310c6038787448a1f509b7cd9f
 
     - name: envoy
+      consumers: [cubestack-platform]
       source: docker.io/envoyproxy/envoy
       target: harbor.isuanova.com/mirrors/docker.io/envoyproxy/envoy
       versions:
@@ -39,6 +43,7 @@ spec:
           digest: sha256:9d84a586119a27b50437dbb01eccd4722832741539b1ed53c8e9d6da6067a6e0
 
     - name: envoy-ratelimit
+      consumers: [cubestack-platform]
       source: docker.io/envoyproxy/ratelimit
       target: harbor.isuanova.com/mirrors/docker.io/envoyproxy/ratelimit
       versions:
@@ -46,14 +51,18 @@ spec:
           digest: sha256:b95206e32b1a5f824fb06062fbb85bbdfb7f5de54135e92afe8462f22c979681
 
     - name: nginx
+      consumers: [cubestack-base]
       source: docker.io/library/nginx
       target: harbor.isuanova.com/mirrors/docker.io/library/nginx
       versions:
         - tag: "1.27"
           digest: sha256:6784fb0834aa7dbbe12e3d7471e69c290df3e6ba810dc38b34ae33d3c1c05f7d
         - tag: "1.30.6-alpine"
+        - tag: "1.30.1-alpine"
+          digest: sha256:c819f83c54b0361f5557601bf5eb4943d09360e7a7fdf426afc466570f45874d
 
     - name: multus-cni
+      consumers: [cubestack-base]
       source: ghcr.io/k8snetworkplumbingwg/multus-cni
       target: harbor.isuanova.com/mirrors/ghcr.io/k8snetworkplumbingwg/multus-cni
       versions:
@@ -61,6 +70,7 @@ spec:
           digest: sha256:a60a21ee1d00c9f215b0b2fa03b3d5e384ab7ddb9ea0d231d36aef220e95a69c
 
     - name: calico-cni
+      consumers: [cubestack-base]
       source: quay.io/calico/cni
       target: harbor.isuanova.com/mirrors/quay.io/calico/cni
       versions:
@@ -68,6 +78,7 @@ spec:
           digest: sha256:0ef740bc587f25565905adf1d1f61a7faff0d571c449c6bdd789feed743d3ef7
 
     - name: calico-kube-controllers
+      consumers: [cubestack-base]
       source: quay.io/calico/kube-controllers
       target: harbor.isuanova.com/mirrors/quay.io/calico/kube-controllers
       versions:
@@ -75,6 +86,7 @@ spec:
           digest: sha256:7870b67ebb13fabc3005252b44fe6e78b21635649bd3072b80afa1684b6565d0
 
     - name: calico-node
+      consumers: [cubestack-base]
       source: quay.io/calico/node
       target: harbor.isuanova.com/mirrors/quay.io/calico/node
       versions:
@@ -82,6 +94,7 @@ spec:
           digest: sha256:99b03fe91e8bfbcb153ae65ef4b701b24ce541ffdd74ff314eb041096008f7fd
 
     - name: metallb-controller
+      consumers: [cubestack-base]
       source: quay.io/metallb/controller
       target: harbor.isuanova.com/mirrors/quay.io/metallb/controller
       versions:
@@ -89,6 +102,7 @@ spec:
           digest: sha256:c9ffd7215dcf93ff69b474c9bc5889ac69da395c62bd693110ba3b57fcecc28c
 
     - name: metallb-speaker
+      consumers: [cubestack-base]
       source: quay.io/metallb/speaker
       target: harbor.isuanova.com/mirrors/quay.io/metallb/speaker
       versions:

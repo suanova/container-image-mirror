@@ -52,6 +52,7 @@ Registry 返回的 `Docker-Content-Digest` 一致。
 
 ```yaml
     - name: my-image
+      consumers: [my-product]     # 至少一个，见下
       source: ghcr.io/org/my-image
       target: harbor.isuanova.com/mirrors/ghcr.io/org/my-image
       versions:
@@ -61,6 +62,9 @@ Registry 返回的 `Docker-Content-Digest` 一致。
 
 要点：
 
+- `consumers` 必填且非空：每个 label 必须先在 `config/policies.yaml` 的
+  `spec.consumers` 里声明。label 表示哪些下游消费这个镜像，不按目录猜；
+  多个下游共用时写多个，例如 `[cubestack-base, my-product]`。
 - `source` / `target` **不带** tag 或 digest，版本写在 `versions[]`。
 - `target` 的第三段必须是源 Registry 主机名。
 - 同一镜像需要保留多个版本时，直接列多个 `versions[]` 条目。
@@ -79,7 +83,8 @@ Registry 返回的 `Docker-Content-Digest` 一致。
 ## 5. 本地验证
 
 ```bash
-make validate                       # 静态校验，无需凭据
+make index                          # 重新生成 index.json（改完 images/ 后必跑）
+make validate                       # 静态校验（含 index.json），无需凭据
 make check-sources ARGS="--image my-image"   # 只读探测：tag 是否存在、架构是否齐全
 make dry-run ARGS="--image my-image"         # 确认目标地址
 ```
@@ -88,8 +93,10 @@ make dry-run ARGS="--image my-image"         # 确认目标地址
 
 ## 6. PR 检查清单
 
+- [ ] `make index` 已执行，`index.json` 与清单一致
 - [ ] `make validate` 通过
 - [ ] `make check-sources` 通过（tag 存在、架构齐全）
+- [ ] 每个新增/修改的镜像都填了 `consumers`，且 label 已在 `config/policies.yaml` 声明
 - [ ] 目标路径包含源 Registry 主机名
 - [ ] 没有引入 `latest`
 - [ ] 生产镜像已钉 digest

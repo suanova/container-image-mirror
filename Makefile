@@ -3,11 +3,12 @@ ARGS ?=
 
 .DEFAULT_GOAL := help
 
-.PHONY: help validate lint sync dry-run check-sources scan report clean
+.PHONY: help index validate lint sync dry-run check-sources scan report clean
 
 help:
 	@printf '%s\n' \
-	  'validate       validate manifests and configuration' \
+	  'index          regenerate index.json from images/*.yaml' \
+	  'validate       validate manifests, configuration and index.json' \
 	  'lint           run shellcheck over scripts/' \
 	  'sync           mirror every pinned image (ARGS="--category networking")' \
 	  'dry-run        print the plan without touching a registry' \
@@ -15,6 +16,9 @@ help:
 	  'scan           scan every mirrored image with Trivy' \
 	  'report         render .results/*.jsonl as Markdown' \
 	  'clean          remove .results/'
+
+index:
+	./scripts/generate-index.py
 
 validate:
 	./scripts/validate.sh

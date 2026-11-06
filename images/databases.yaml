@@ -11,6 +11,7 @@ spec:
 
   images:
     - name: cloudnative-pg-operator
+      consumers: [cubestack-platform]
       source: ghcr.io/cloudnative-pg/cloudnative-pg
       target: harbor.isuanova.com/mirrors/ghcr.io/cloudnative-pg/cloudnative-pg
       versions:
@@ -18,6 +19,7 @@ spec:
           digest: sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07
 
     - name: postgresql
+      consumers: [cubestack-platform]
       source: ghcr.io/cloudnative-pg/postgresql
       target: harbor.isuanova.com/mirrors/ghcr.io/cloudnative-pg/postgresql
       versions:
@@ -25,20 +27,27 @@ spec:
           digest: sha256:c19eac3ed7d86b0261ef5551c4daf9c61fba554a51664abe7c4f689f5b478993
 
     - name: redis
+      consumers: [cubestack-platform]
       source: quay.io/opstree/redis
       target: harbor.isuanova.com/mirrors/quay.io/opstree/redis
       versions:
         - tag: "v7.4.11"
           digest: sha256:115d8e221b1459b9f2db7d927ed40318ffac4eb2cddb5702974bce92d32b7a51
+        - tag: "v7.0.15"
+          digest: sha256:284c5a51803da9483d66d4f458b1fa9e8b8a67a6e55b9793a0b005cd39239356
 
     - name: redis-exporter
+      consumers: [cubestack-platform]
       source: quay.io/oliver006/redis_exporter
       target: harbor.isuanova.com/mirrors/quay.io/oliver006/redis_exporter
       versions:
         - tag: "v1.97.0"
           digest: sha256:f5f903fbe77571d455ede0453b084d6840bc62fc105efac001034421cab83b99
+        - tag: "v1.44.0"
+          digest: sha256:a63d2b6e946f8b82467ec5f853c24ab994b7cab5eacc3c3cbaa50e49bd27f235
 
     - name: redis-operator
+      consumers: [cubestack-platform]
       source: quay.io/opstree/redis-operator
       target: harbor.isuanova.com/mirrors/quay.io/opstree/redis-operator
       versions:
@@ -46,8 +55,11 @@ spec:
           digest: sha256:1c6818e5e50553f9f3c1b91a8824ae5c1999a0c9416c794ca51431b7f0cb48c3
 
     - name: redis-sentinel
+      consumers: [cubestack-platform]
       source: quay.io/opstree/redis-sentinel
       target: harbor.isuanova.com/mirrors/quay.io/opstree/redis-sentinel
       versions:
         - tag: "v7.4.11"
           digest: sha256:9aae9fadd987a72684d5e75f92081bd4a3df81726e713b47a71df8bae861cda6
+        - tag: "v7.0.15"
+          digest: sha256:db76095344deeda213aa714ac3ab8205658eb7b8e1206ba409bdec17f68175fa

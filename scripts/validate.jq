@@ -53,6 +53,20 @@ def msg: "\($file): \(.)";
           (if ($n | name_ok | not)
             then "\($n): name must be kebab-case"
             else empty end),
+          (if ($img.consumers | type) != "array"
+            then "\($n): consumers must be a non-empty list"
+            elif ($img.consumers | length) == 0
+            then "\($n): consumers must not be empty"
+            else
+              ( $img.consumers[] as $c
+                | if ($c | type) != "string"
+                  then "\($n): consumer must be a string"
+                  elif ($c | name_ok | not)
+                  then "\($n): invalid consumer: \($c | tostring)"
+                  elif ($consumers | index($c)) == null
+                  then "\($n): consumer '\($c)' is not declared in config/policies.yaml"
+                  else empty end )
+            end),
 
           (if $s == ""
             then "\($n): source is required"

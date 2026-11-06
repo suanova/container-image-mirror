@@ -11,13 +11,17 @@ spec:
 
   images:
     - name: grafana
+      consumers: [cubestack-platform]
       source: docker.io/grafana/grafana
       target: harbor.isuanova.com/mirrors/docker.io/grafana/grafana
       versions:
         - tag: "13.3.0-distroless"
           digest: sha256:540b8afb775bf34aefce417e4329039daa5d44b6f2fbda6881397b1b247ca7df
+        - tag: "13.2.2-distroless"
+          digest: sha256:69a5d2d957ca0bba434c160dcd4f2d07de9d6c756a0ba10ae7f52b72ced1e4cc
 
     - name: perses
+      consumers: [cubestack-platform]
       source: docker.io/persesdev/perses
       target: harbor.isuanova.com/mirrors/docker.io/persesdev/perses
       versions:
@@ -25,6 +29,7 @@ spec:
           digest: sha256:292605f009770f07aa17217e70f877fabbc74858d0af9054d395064e1c411c06
 
     - name: perses-operator
+      consumers: [cubestack-platform]
       source: docker.io/persesdev/perses-operator
       target: harbor.isuanova.com/mirrors/docker.io/persesdev/perses-operator
       versions:
@@ -32,6 +37,7 @@ spec:
           digest: sha256:8f8d7b09caefc35777dc88b9e8823efb7232b1ce2869648575176e760d7b55bf
 
     - name: kube-rbac-proxy
+      consumers: [cubestack-platform]
       source: quay.io/brancz/kube-rbac-proxy
       target: harbor.isuanova.com/mirrors/quay.io/brancz/kube-rbac-proxy
       versions:
@@ -39,13 +45,17 @@ spec:
           digest: sha256:c280684dd23793fb2f287d1f4efc84b7800b3e01205d770b98694827bfe514cb
 
     - name: kiwigrid-k8s-sidecar-quay
+      consumers: [cubestack-platform]
       source: quay.io/kiwigrid/k8s-sidecar
       target: harbor.isuanova.com/mirrors/quay.io/kiwigrid/k8s-sidecar
       versions:
         - tag: "2.14.3"
           digest: sha256:52d311dcedd587421a236c4d6c621f05614c40a51386e955e0699dca97ec0880
+        - tag: "2.11.2"
+          digest: sha256:2912be006f62f9ea080194cf6d3afcd90daead8d101d0ba686a137a849f6a4f6
 
     - name: prometheus-config-reloader
+      consumers: [cubestack-platform]
       source: quay.io/prometheus-operator/prometheus-config-reloader
       target: harbor.isuanova.com/mirrors/quay.io/prometheus-operator/prometheus-config-reloader
       versions:
@@ -53,6 +63,7 @@ spec:
           digest: sha256:a1897c67478bc23434534e91ad3855280771196b1daf17144db9dbcb655bef71
 
     - name: prometheus-operator
+      consumers: [cubestack-platform]
       source: quay.io/prometheus-operator/prometheus-operator
       target: harbor.isuanova.com/mirrors/quay.io/prometheus-operator/prometheus-operator
       versions:
@@ -60,6 +71,7 @@ spec:
           digest: sha256:c7edf0379b7271ef1705dce258d2bb73820e299cc95559369e9f6fc3321639ec
 
     - name: alertmanager
+      consumers: [cubestack-platform]
       source: quay.io/prometheus/alertmanager
       target: harbor.isuanova.com/mirrors/quay.io/prometheus/alertmanager
       versions:
@@ -67,6 +79,7 @@ spec:
           digest: sha256:39d8bb3966c694a124428a3a88fbcffd40bd069129ecd47c059f8a3f17c55f3b
 
     - name: node-exporter
+      consumers: [cubestack-platform]
       source: quay.io/prometheus/node-exporter
       target: harbor.isuanova.com/mirrors/quay.io/prometheus/node-exporter
       versions:
@@ -74,6 +87,7 @@ spec:
           digest: sha256:8c9bac11973b94b59be88d6e11fee4429aa743c8846cdc75d65b18db33f6a106
 
     - name: prometheus
+      consumers: [cubestack-platform]
       source: quay.io/prometheus/prometheus
       target: harbor.isuanova.com/mirrors/quay.io/prometheus/prometheus
       versions:
@@ -81,8 +95,11 @@ spec:
           digest: sha256:451a845bae1d51622b41af1780eb2ad911bbb79a9855bc8e9bb67fabbc03f934
 
     - name: thanos
+      consumers: [cubestack-platform]
       source: quay.io/thanos/thanos
       target: harbor.isuanova.com/mirrors/quay.io/thanos/thanos
       versions:
         - tag: "v0.42.5"
           digest: sha256:0a546b98a8dd47735456ab389983675ee363d68127e334937a9fceeea10da5e7
+        - tag: "v0.42.4"
+          digest: sha256:b567818fe608067eb0f1d7c2c4fe361e7ad83c8a256234c97685f1d0bf670cc8

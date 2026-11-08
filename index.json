@@ -294,7 +294,7 @@
         },
         {
           "tag": "v4.5.1",
-          "digest": "sha256:b6136ec6ef8d00c18c4664c179ace6edae883c9b3b1d43fd1514a7207037ed14",
+          "digest": "sha256:9dcd469f02bbb7592ad61b0f848ec242f9ea2102187a0cd8407df33c2d633e9c",
           "platforms": [
             "linux/amd64"
           ]
@@ -333,7 +333,7 @@
       "versions": [
         {
           "tag": "v4.0.1",
-          "digest": "sha256:0253c13661740e04abce5dad299a8c5004e3d870d3b7d49403f647d08fd0c117",
+          "digest": "sha256:bf5a235b67d8aea00f5b8ec24d384a2480e1017d5458d8a63b361e9eeb1608a9",
           "platforms": [
             "linux/amd64"
           ]
@@ -356,7 +356,7 @@
       "versions": [
         {
           "tag": "v1.10.1",
-          "digest": "sha256:bd8429236f04af21dff0cb6871df4733dbf2090351ef7141f0100f4a8d22aafa",
+          "digest": "sha256:4ecda2818f6d88a8f217babd459fdac31588f85581aa95ac7092bb0471ff8541",
           "platforms": [
             "linux/amd64"
           ]
@@ -395,7 +395,7 @@
       "versions": [
         {
           "tag": "v7.0.2",
-          "digest": "sha256:f0a9c96279b2b88e98f8c7d66477a5e89230289a5c4e3ce7a339c0b49eb5ba1b",
+          "digest": "sha256:c4b6b02737bc24906fcce57fe6626d1a36cb2b91baa971af2a5e5a919093c34e",
           "platforms": [
             "linux/amd64"
           ]
@@ -896,7 +896,7 @@
         },
         {
           "tag": "1.30.6-alpine",
-          "digest": "sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949",
+          "digest": "sha256:583b7f2fce1cdb8da5ad5c39ebd3c33b98b87d493190e548bdee1fa8c619c311",
           "platforms": [
             "linux/amd64"
           ]
@@ -1159,6 +1159,7 @@
         },
         {
           "tag": "3.1.2",
+          "digest": "sha256:38907510915c3f1604c7e83d6ab602ab3020d092f73bdaed8696773693ff768c",
           "platforms": [
             "linux/amd64"
           ]
@@ -1213,7 +1214,7 @@
       "versions": [
         {
           "tag": "v7.0.2",
-          "digest": "sha256:7330f8ffc63601cdd24ccf164d7d62a8c74eb6c81d2f8a38ac14e14bda814036",
+          "digest": "sha256:a03550d7b25d0d24c6c313a27fcade0065f0cee159805ed0b0083700dcb52b76",
           "platforms": [
             "linux/amd64"
           ]

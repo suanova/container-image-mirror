@@ -52,7 +52,7 @@ spec:
         - tag: "1.27"
           digest: sha256:6784fb0834aa7dbbe12e3d7471e69c290df3e6ba810dc38b34ae33d3c1c05f7d
         - tag: "1.30.6-alpine"
-          digest: sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949
+          digest: sha256:583b7f2fce1cdb8da5ad5c39ebd3c33b98b87d493190e548bdee1fa8c619c311
 
     - name: multus-cni
       source: ghcr.io/k8snetworkplumbingwg/multus-cni

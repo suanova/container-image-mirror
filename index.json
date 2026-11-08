@@ -153,6 +153,13 @@
       "target": "harbor.isuanova.com/mirrors/quay.io/cephcsi/cephcsi",
       "versions": [
         {
+          "tag": "v3.17.0",
+          "digest": "sha256:886e6d2416d62dd7c8fbe659b6306b6c9451d6918e35ad5d1ac774520e11ef87",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
           "tag": "v3.18.1",
           "digest": "sha256:a8c0653a9565049ee7b36a585753e5e0e8fe2e4e5a67e9db3a5f8d9d7e890635",
           "platforms": [
@@ -168,6 +175,13 @@
       "source": "quay.io/cephcsi/ceph-csi-operator",
       "target": "harbor.isuanova.com/mirrors/quay.io/cephcsi/ceph-csi-operator",
       "versions": [
+        {
+          "tag": "v1.0.4",
+          "digest": "sha256:c62933fd4083635f969f8a61932af45dba9902d48867e2b5d98a69d8e4344eb6",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
         {
           "tag": "v1.1.0",
           "digest": "sha256:c42c95c36fa257266571ff7542c3e350bb93b152f8865538c8929eb2e2dbe7c6",
@@ -249,6 +263,13 @@
       "target": "harbor.isuanova.com/mirrors/quay.io/csiaddons/k8s-sidecar",
       "versions": [
         {
+          "tag": "v0.14.0",
+          "digest": "sha256:69092d026323307933fba2bed9c57d864f2a92cfd385d644b478442ded0d2886",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
           "tag": "v0.15.1",
           "digest": "sha256:f342ecd54c9c1ff7b42582c54f4deaa64310f96bcf73891d88744da0f72426b3",
           "platforms": [
@@ -270,6 +291,13 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "v4.5.1",
+          "digest": "sha256:b6136ec6ef8d00c18c4664c179ace6edae883c9b3b1d43fd1514a7207037ed14",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -286,6 +314,13 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "v2.4.0",
+          "digest": "sha256:fc39de92284cc45240417f48549ee1c98da7baef7d0290bc29b232756dfce7c0",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -296,6 +331,13 @@
       "source": "registry.k8s.io/sig-storage/csi-provisioner",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-provisioner",
       "versions": [
+        {
+          "tag": "v4.0.1",
+          "digest": "sha256:0253c13661740e04abce5dad299a8c5004e3d870d3b7d49403f647d08fd0c117",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
         {
           "tag": "v6.3.0",
           "digest": "sha256:a4b0b1a37605b7b04a293e136edf7006ec1786a8eb3f4e5a945f81d667dcc371",
@@ -312,6 +354,13 @@
       "source": "registry.k8s.io/sig-storage/csi-resizer",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-resizer",
       "versions": [
+        {
+          "tag": "v1.10.1",
+          "digest": "sha256:bd8429236f04af21dff0cb6871df4733dbf2090351ef7141f0100f4a8d22aafa",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
         {
           "tag": "v2.2.1",
           "digest": "sha256:ea1d25e23479000c7e8eeb92d827df66258df4e482ca054c5e7ce3fc0f5c41a5",
@@ -344,6 +393,13 @@
       "source": "registry.k8s.io/sig-storage/csi-snapshotter",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/csi-snapshotter",
       "versions": [
+        {
+          "tag": "v7.0.2",
+          "digest": "sha256:f0a9c96279b2b88e98f8c7d66477a5e89230289a5c4e3ce7a339c0b49eb5ba1b",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
         {
           "tag": "v8.6.0",
           "digest": "sha256:42af0929bcd60a43499825c078a60ff0534e08af8fbeb283aa391be40feb9f3e",
@@ -1117,6 +1173,13 @@
       "target": "harbor.isuanova.com/mirrors/docker.io/rook/ceph",
       "versions": [
         {
+          "tag": "v1.20.2",
+          "digest": "sha256:a642e07d4d0b4d02214e435337c7f5d3f5154369270ea5180de9d5d5d9d965c2",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
           "tag": "v1.21.1",
           "digest": "sha256:a9882f8220542cf0106478a5c41fd444501d6adf6fa713350e76b6df6ca71fb6",
           "platforms": [
@@ -1148,6 +1211,13 @@
       "source": "registry.k8s.io/sig-storage/snapshot-controller",
       "target": "harbor.isuanova.com/mirrors/registry.k8s.io/sig-storage/snapshot-controller",
       "versions": [
+        {
+          "tag": "v7.0.2",
+          "digest": "sha256:7330f8ffc63601cdd24ccf164d7d62a8c74eb6c81d2f8a38ac14e14bda814036",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
         {
           "tag": "v8.7.0",
           "digest": "sha256:8511f417d0072efcd937aedd7cc79a937d5066e64ee17beb6097301c92742f19",

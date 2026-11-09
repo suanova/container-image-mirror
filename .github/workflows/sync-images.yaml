@@ -176,18 +176,18 @@ jobs:
       (github.event_name == 'push' || inputs.dry_run != true)
     runs-on: ubuntu-latest
     env:
-      MIRROR_APP_ID: ${{ vars.MIRROR_APP_ID }}
-      MIRROR_APP_PRIVATE_KEY: ${{ secrets.MIRROR_APP_PRIVATE_KEY }}
+      SUANOVA_BOT_CLIENT_ID: ${{ vars.SUANOVA_BOT_CLIENT_ID }}
+      SUANOVA_BOT_APP_PRIVATE_KEY: ${{ secrets.SUANOVA_BOT_APP_PRIVATE_KEY }}
       MIRROR_NOTIFY_TARGETS: ${{ vars.MIRROR_NOTIFY_TARGETS }}
     steps:
       - name: Skip dispatch when notifications are not configured
-        if: env.MIRROR_APP_ID == '' || env.MIRROR_APP_PRIVATE_KEY == '' || env.MIRROR_NOTIFY_TARGETS == ''
+        if: env.SUANOVA_BOT_CLIENT_ID == '' || env.SUANOVA_BOT_APP_PRIVATE_KEY == '' || env.MIRROR_NOTIFY_TARGETS == ''
         run: |
-          echo "::warning::MIRROR_APP_ID / MIRROR_APP_PRIVATE_KEY / MIRROR_NOTIFY_TARGETS are not configured; skipping mirror-updated dispatch"
+          echo "::warning::SUANOVA_BOT_CLIENT_ID / SUANOVA_BOT_APP_PRIVATE_KEY / MIRROR_NOTIFY_TARGETS are not configured; skipping mirror-updated dispatch"
 
       - name: Resolve notification targets
         id: targets
-        if: env.MIRROR_APP_ID != '' && env.MIRROR_APP_PRIVATE_KEY != '' && env.MIRROR_NOTIFY_TARGETS != ''
+        if: env.SUANOVA_BOT_CLIENT_ID != '' && env.SUANOVA_BOT_APP_PRIVATE_KEY != '' && env.MIRROR_NOTIFY_TARGETS != ''
         run: |
           set -euo pipefail
           jq -e 'type == "array" and length > 0 and all(.[]; type == "string" and length > 0)' \
@@ -201,8 +201,8 @@ jobs:
         if: steps.targets.outputs.repos != ''
         uses: actions/create-github-app-token@v1
         with:
-          app-id: ${{ env.MIRROR_APP_ID }}
-          private-key: ${{ env.MIRROR_APP_PRIVATE_KEY }}
+          client-id: ${{ env.SUANOVA_BOT_CLIENT_ID }}
+          private-key: ${{ env.SUANOVA_BOT_APP_PRIVATE_KEY }}
           owner: suanova
           repositories: ${{ steps.targets.outputs.repos }}
 

@@ -54,6 +54,8 @@ spec:
       source: quay.io/coreos/etcd
       target: harbor.isuanova.com/mirrors/quay.io/coreos/etcd
       versions:
+        - tag: "v3.6.15"
+          digest: sha256:7cf6622cb09b111289eed8a0cce3478e4f01d5048b0e0a1ed208299f3419334d
         - tag: "v3.6.16"
           digest: sha256:a9c7cc12156f4b26ca41f0b57ba5b76c45037ff6c1e47ea3d68cb7908d48a965
 
@@ -63,6 +65,7 @@ spec:
       versions:
         - tag: "v1.12.4"
           digest: sha256:986f04c2e15e147d00bdd51e8c51bcef3644b13ff806be7d2ff1b261d6dfbae1
+        - tag: "v1.14.2"
 
     - name: cluster-proportional-autoscaler
       source: registry.k8s.io/cpa/cluster-proportional-autoscaler
@@ -84,6 +87,7 @@ spec:
       versions:
         - tag: "v1.35.8"
           digest: sha256:6a7b73e718540d2c097cbcdc84c0f2cffad7a51ebccaf7f0b8cceb464715e1d9
+        - tag: "v1.36.5"
 
     - name: kube-controller-manager
       source: registry.k8s.io/kube-controller-manager
@@ -91,6 +95,7 @@ spec:
       versions:
         - tag: "v1.35.8"
           digest: sha256:b27c0bf88a81437747b257a1e6d019a921ec3a97b724e67dfc180efe3125998b
+        - tag: "v1.36.5"
 
     - name: kube-proxy
       source: registry.k8s.io/kube-proxy
@@ -98,6 +103,7 @@ spec:
       versions:
         - tag: "v1.35.8"
           digest: sha256:5d641d163114b212229b8bceba9f859cff1265ba40e02a2bb0ec8743f56c1033
+        - tag: "v1.36.5"
 
     - name: kube-scheduler
       source: registry.k8s.io/kube-scheduler
@@ -105,6 +111,7 @@ spec:
       versions:
         - tag: "v1.35.8"
           digest: sha256:f4334826c53876b700f73cd06a69c405c6f882a4116c5813786e046ee6eca1ac
+        - tag: "v1.36.5"
 
     - name: kube-state-metrics
       source: registry.k8s.io/kube-state-metrics/kube-state-metrics
@@ -140,3 +147,4 @@ spec:
       versions:
         - tag: "3.10.1"
           digest: sha256:278fb9dbcca9518083ad1e11276933a2e96f23de604a3a08cc3c80002767d24c
+        - tag: "3.10.2"

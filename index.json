@@ -252,6 +252,12 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "v1.14.2",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -529,6 +535,13 @@
       "target": "harbor.isuanova.com/mirrors/quay.io/coreos/etcd",
       "versions": [
         {
+          "tag": "v3.6.15",
+          "digest": "sha256:7cf6622cb09b111289eed8a0cce3478e4f01d5048b0e0a1ed208299f3419334d",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
           "tag": "v3.6.16",
           "digest": "sha256:a9c7cc12156f4b26ca41f0b57ba5b76c45037ff6c1e47ea3d68cb7908d48a965",
           "platforms": [
@@ -614,6 +627,12 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "v1.36.5",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -630,6 +649,12 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "v1.36.5",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -643,6 +668,12 @@
         {
           "tag": "v1.35.8",
           "digest": "sha256:5d641d163114b212229b8bceba9f859cff1265ba40e02a2bb0ec8743f56c1033",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
+          "tag": "v1.36.5",
           "platforms": [
             "linux/amd64"
           ]
@@ -675,6 +706,12 @@
         {
           "tag": "v1.35.8",
           "digest": "sha256:f4334826c53876b700f73cd06a69c405c6f882a4116c5813786e046ee6eca1ac",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
+          "tag": "v1.36.5",
           "platforms": [
             "linux/amd64"
           ]
@@ -961,6 +998,12 @@
         {
           "tag": "3.10.1",
           "digest": "sha256:278fb9dbcca9518083ad1e11276933a2e96f23de604a3a08cc3c80002767d24c",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
+          "tag": "3.10.2",
           "platforms": [
             "linux/amd64"
           ]

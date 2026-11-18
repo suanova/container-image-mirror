@@ -30,6 +30,17 @@
 | `ghcr.io/kube-vip/kube-vip:v1.3.1` | `harbor.isuanova.com/mirrors/ghcr.io/kube-vip/kube-vip:v1.3.1` |
 | `registry.k8s.io/pause:3.10.1` | `harbor.isuanova.com/mirrors/registry.k8s.io/pause:3.10.1` |
 
+### 同主机迁移（Harbor → Harbor）
+
+源主机与目标主机相同时（例如 Harbor 的 `metax/` → `mirrors/`），源主机段
+没有额外的溯源价值，允许省略，直接落到 `<Harbor>/<project>/<仓库路径>:<tag>`：
+
+| 源 | 镜像后 |
+| --- | --- |
+| `harbor.isuanova.com/metax/gpu-label:0.15.3` | `harbor.isuanova.com/mirrors/gpu-label:0.15.3` |
+
+`validate.sh` 仅在 source host != destination host 时强制 target 第三段为源主机。
+
 ### 为什么保留源 Registry 主机名
 
 1. **不冲突。** `docker.io/library/redis` 和 `quay.io/redis/redis` 是不同项目，
@@ -39,9 +50,10 @@
 3. **迁移便宜。** 集群里把 `quay.io/...` 前缀替换成
    `harbor.isuanova.com/mirrors/quay.io/...` 即可，其余路径不变。
 
-`validate.sh` 会强制 `target` 的第三段与 `source` 的主机名一致；如果想放宽，
-把 `config/policies.yaml` 的 `requireSourceHostInTarget` 改成 `false`，但请先在
-团队内确认，因为这是本仓库最重要的可追溯性约束。
+`validate.sh` 会强制 `target` 的第三段与 `source` 的主机名一致（同主机迁移
+除外，见上）；如果想完全放宽，把 `config/policies.yaml` 的
+`requireSourceHostInTarget` 改成 `false`，但请先在团队内确认，因为这是本仓库
+最重要的可追溯性约束。
 
 ## 新增源 Registry
 

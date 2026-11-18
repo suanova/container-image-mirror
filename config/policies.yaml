@@ -34,6 +34,8 @@ spec:
     allowLatest: false
     # Require <registry>/<project>/<source-host>/<path> so the provenance of a
     # mirrored image is visible from its pull reference alone.
+    # Same-host migrations are exempt (source host == destination host), e.g.
+    # harbor.isuanova.com/metax/* -> harbor.isuanova.com/mirrors/*.
     requireSourceHostInTarget: true
 
   signature:

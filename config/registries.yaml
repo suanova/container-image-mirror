@@ -17,6 +17,12 @@ spec:
       tlsVerify: true
 
   sources:
+    # Harbor-internal migrations (e.g. metax/ -> mirrors/): the registry is both
+    # source and destination, and reuses the CI robot credentials configured
+    # under destinations below.
+    - host: harbor.isuanova.com
+      auth: credentials
+      tlsVerify: true
     - host: docker.io
       auth: anonymous
       tlsVerify: true

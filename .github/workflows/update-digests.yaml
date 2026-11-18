@@ -4,6 +4,11 @@ name: Update digests
 # The sync workflow itself stays read-only; this job is the only writer and it
 # never rewrites an existing pin (a mismatch is drift and fails the run).
 on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/update-digests.yaml
+      - scripts/resolve-digests.sh
   workflow_dispatch:
     inputs:
       category:
@@ -25,6 +30,7 @@ concurrency:
 jobs:
   update:
     if: >-
+      github.event_name == 'push' ||
       github.event_name == 'workflow_dispatch' ||
       (github.event.workflow_run.conclusion == 'success' &&
        (github.event.workflow_run.event == 'push' ||

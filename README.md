@@ -192,7 +192,8 @@ payload 只带 `catalog_commit`。下游按该 commit 重新读取 `index.json`�
 
 ## 本地使用
 
-需要 `yq` (v4)、`jq`、`skopeo`、`python3` + PyYAML；扫描需要 `trivy`（可用
+需要 `yq` (v4)、`jq`、`skopeo` (>= 1.7，`multiarch: false` 使用
+`--preserve-digests`)、`python3` + PyYAML；扫描需要 `trivy`（可用
 `./scripts/install-trivy.sh` 安装固定版本），签名校验需要 `cosign`。
 
 ```bash

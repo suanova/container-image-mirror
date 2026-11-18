@@ -278,16 +278,20 @@ skopeo_copy() {
   src=$(strip_scheme "$1")
   dst=$(strip_scheme "$2")
   local -a args=(copy --authfile "$AUTHFILE" --retry-times "$(policy '.spec.copy.retryTimes' 5)")
-  # Preserve uncompressed OCI layers. Without this, skopeo gzip-compresses
-  # them on push, changing layer/child/manifest digests. This matters for the
-  # vendor images in the metax manifest; gzip layers are unaffected.
+  # This flag only applies to the `oci:` transport. It is kept for oci
+  # destinations; docker:// registries ignore it and compress uncompressed
+  # layers on push (dockerImageDestination.DesiredLayerCompression = Compress).
   args+=(--dest-oci-accept-uncompressed-layers)
   if [[ $multiarch == true ]]; then
     args+=(--all)
   else
-    # Copy only linux/amd64 as a single manifest; avoid the manifest-list
-    # rewrite that Harbor performs for uncompressed OCI indexes.
-    args+=(--override-os linux --override-arch amd64)
+    # Copy only linux/amd64 and preserve the source manifest byte-for-byte.
+    # Without --preserve-digests skopeo recompresses uncompressed layers for
+    # docker:// destinations, so the target digest differs from the amd64
+    # child digest resolved by manifest_amd64_digest(). Worse, recompression
+    # is deterministic: if the destination already holds the same gzip
+    # manifest, the tag never moves and verification can never succeed.
+    args+=(--preserve-digests --override-os linux --override-arch amd64)
   fi
   if [[ $(tls_verify_for "$(host_of "$src")") == "false" ]]; then
     args+=(--src-tls-verify=false)

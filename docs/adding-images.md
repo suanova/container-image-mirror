@@ -74,6 +74,19 @@ Registry 返回的 `Docker-Content-Digest` 一致。
       platforms: [linux/amd64, linux/arm64]
   ```
 
+- 某些厂商镜像使用**未压缩 OCI layer**，推送到 Harbor 时会被重新压缩，manifest
+  list 的 digest 会变。集群只用 amd64 时，可在 `spec.defaults` 或单个镜像下设置：
+
+  ```yaml
+  spec:
+    defaults:
+      multiarch: false
+  ```
+
+  `multiarch: false` 只复制 `linux/amd64` 单架构，目标 tag 是单 manifest；
+  `versions[].digest` 必须写 **amd64 子 manifest 的 digest**（从源 manifest list
+  的 amd64 条目取）。这样 digest 不会因 Harbor 重写 manifest list 而变化。
+
 - 只有上游根本没有 amd64 manifest 时才会去掉 `linux/amd64`，这种情况请在 PR
   里说明原因——集群只有 amd64 节点。
 

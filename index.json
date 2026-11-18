@@ -878,7 +878,6 @@
       "versions": [
         {
           "tag": "0.15.3",
-          "digest": "sha256:1fdd60ce4631bc2fc3c80ddb0803d0b311c1227c7f1c52f06c7af727e3562f6e",
           "platforms": [
             "linux/amd64"
           ]
@@ -894,7 +893,6 @@
       "versions": [
         {
           "tag": "3.8.1.6-amd64",
-          "digest": "sha256:d604dcabdeeb2709848170d4c696e1579e3ed3d6edb2645cba657fc38a0607a7",
           "platforms": [
             "linux/amd64"
           ]
@@ -910,7 +908,6 @@
       "versions": [
         {
           "tag": "0.15.3",
-          "digest": "sha256:32638ea1db2eeaff37f7745b5468e87c7344c89853a9e08923fea02f6f825d35",
           "platforms": [
             "linux/amd64"
           ]
@@ -926,7 +923,6 @@
       "versions": [
         {
           "tag": "0.15.3",
-          "digest": "sha256:37a800c609c776ccdf2601989251ec1e0bf87d935b3944edd368b95fc28a2b31",
           "platforms": [
             "linux/amd64"
           ]
@@ -942,7 +938,6 @@
       "versions": [
         {
           "tag": "0.15.3",
-          "digest": "sha256:a3627d41fdc0a0f78a1e3183481b855e8ef63f40f4c54616e26361f0a07c2f3f",
           "platforms": [
             "linux/amd64"
           ]
@@ -958,7 +953,6 @@
       "versions": [
         {
           "tag": "0.15.3",
-          "digest": "sha256:54641b697aa7522619b0f0fa8e03491f8f0113b102359907331a566e29509153",
           "platforms": [
             "linux/amd64"
           ]
@@ -974,7 +968,6 @@
       "versions": [
         {
           "tag": "0.15.3",
-          "digest": "sha256:ee843abcc30ddc1d5d0f377b45a23baf29c3cf1fce2bba941a01e2879e675070",
           "platforms": [
             "linux/amd64"
           ]
@@ -990,7 +983,6 @@
       "versions": [
         {
           "tag": "3.8.1.2-ubuntu22.04-amd64",
-          "digest": "sha256:22b53cbedd584db3e9baf5981073ed1b83a42658751ed98a6fafac26d21dd2f0",
           "platforms": [
             "linux/amd64"
           ]
@@ -1006,7 +998,6 @@
       "versions": [
         {
           "tag": "0.15.3",
-          "digest": "sha256:c9c2f6b67e46c31204f3f8f34eb84663d505cbe419c131f868bd17e6c0e33f81",
           "platforms": [
             "linux/amd64"
           ]
@@ -1022,7 +1013,6 @@
       "versions": [
         {
           "tag": "0.15.3",
-          "digest": "sha256:51227c6fc2331a520a823a6e796c43c5af90ebfa8de660e9a9dfcf6f9ab4b5bf",
           "platforms": [
             "linux/amd64"
           ]
@@ -1038,7 +1028,6 @@
       "versions": [
         {
           "tag": "0.15.3",
-          "digest": "sha256:b9588208eaf72364150c5144cb794d08d0c574e5ae46d210c0b74c813f2ffbee",
           "platforms": [
             "linux/amd64"
           ]

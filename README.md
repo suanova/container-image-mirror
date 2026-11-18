@@ -88,6 +88,9 @@ metadata:
 spec:
   defaults:
     platforms: [linux/amd64]
+    # 可选：只复制 amd64 单架构（用于未压缩 OCI layer 的厂商镜像；此时
+    # versions[].digest 写 amd64 子 manifest digest）
+    # multiarch: false
 
   images:
     - name: nginx

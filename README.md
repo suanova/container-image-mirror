@@ -186,6 +186,7 @@ payload 只带 `catalog_commit`。下游按该 commit 重新读取 `index.json`�
 | `sync-images.yaml` | 手动、`images/**` 合入 main | 按文件矩阵并发同步，可选扫描，产出报告；成功后 dispatch 下游 |
 | `scheduled-sync.yaml` | 每周一 03:17 | 重新断言固定版本：补缺失、报漂移；**不会**升级版本 |
 | `security-scan.yaml` | 每周一 04:41、手动 | 对 Harbor 中现有 digest 做漏洞扫描 + SBOM |
+| `update-digests.yaml` | sync 成功后、手动 | 从 target 读取缺失 digest，开 PR；不改已有 pin |
 
 `sync` 与 `security-scan` 都挂在内置的 `production` environment 上，可以在
 仓库设置里为它加 required reviewers，让写入 Harbor 变成需要审批的动作。
@@ -201,6 +202,7 @@ make index                     # 重新生成 index.json（改完 images/ 后必
 make validate                  # 静态校验（含 index.json 与清单一致性）
 make dry-run                   # 只打印计划
 make check-sources             # 只读探测源仓库
+make digests                   # 从 target 补缺失 digest（先 sync）
 make sync ARGS="--category observability --tag v3.15.1"
 make scan
 ```

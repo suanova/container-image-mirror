@@ -32,6 +32,16 @@ Registry 返回的 `Docker-Content-Digest` 一致。
 
 输出是 64 位十六进制，前面补 `sha256:`。
 
+镜像已经同步到 Harbor 后，也可以让工具从 target 读取 digest：
+
+```bash
+make digests ARGS="--category networking"
+```
+
+它只补缺失的 `versions[].digest`，已有 pin 不会被改写；如果 target digest 与
+已有 pin 不一致，会报 drift 并失败。工作流 `update-digests.yaml` 会在 sync
+成功后自动开 PR，人工 review 后合并。
+
 ## 3. 选择文件
 
 按领域放进 `images/` 下已有的文件，不要新建"杂项"文件：

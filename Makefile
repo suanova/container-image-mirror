@@ -3,11 +3,12 @@ ARGS ?=
 
 .DEFAULT_GOAL := help
 
-.PHONY: help index validate lint sync dry-run check-sources scan report clean
+.PHONY: help index digests validate lint sync dry-run check-sources scan report clean
 
 help:
 	@printf '%s\n' \
 	  'index          regenerate index.json from images/*.yaml' \
+	  'digests        fill missing target digests, then regenerate index.json' \
 	  'validate       validate manifests, configuration and index.json' \
 	  'lint           run shellcheck over scripts/' \
 	  'sync           mirror every pinned image (ARGS="--category networking")' \
@@ -18,6 +19,10 @@ help:
 	  'clean          remove .results/'
 
 index:
+	./scripts/generate-index.py
+
+digests:
+	./scripts/resolve-digests.sh $(ARGS)
 	./scripts/generate-index.py
 
 validate:

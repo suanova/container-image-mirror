@@ -187,6 +187,25 @@ manifest_digest() {
   skopeo_inspect_raw "$1" 2>/dev/null | sha256_stdin | sed 's/^/sha256:/'
 }
 
+# Digest of the linux/amd64 image behind a tag.
+#
+# For a manifest list this is the amd64 child manifest digest; for a single
+# manifest it is the manifest digest. Used by `multiarch: false` entries,
+# where the mirror copies only the amd64 image so the target tag is a single
+# manifest and its digest stays stable across registries.
+manifest_amd64_digest() {
+  local ref raw digest
+  ref=$(strip_scheme "$1")
+  if raw=$(skopeo_inspect_raw "$ref" 2>/dev/null) &&
+    [[ $(jq -r '.manifests | length' <<<"$raw" 2>/dev/null || echo 0) -gt 0 ]]; then
+    digest=$(jq -r '.manifests[] | select(.platform.os == "linux" and .platform.architecture == "amd64") | .digest' <<<"$raw" | head -1)
+    [[ -n $digest ]] || return 1
+    printf '%s\n' "$digest"
+    return 0
+  fi
+  manifest_digest "$1"
+}
+
 # Prints one "os/arch[/variant]" per available platform.
 manifest_platforms() {
   local ref raw
@@ -255,10 +274,21 @@ assert_platforms() {
 }
 
 skopeo_copy() {
-  local src dst
+  local src dst multiarch=${2:-true}
   src=$(strip_scheme "$1")
   dst=$(strip_scheme "$2")
-  local -a args=(copy --all --authfile "$AUTHFILE" --retry-times "$(policy '.spec.copy.retryTimes' 5)")
+  local -a args=(copy --authfile "$AUTHFILE" --retry-times "$(policy '.spec.copy.retryTimes' 5)")
+  # Preserve uncompressed OCI layers. Without this, skopeo gzip-compresses
+  # them on push, changing layer/child/manifest digests. This matters for the
+  # vendor images in the metax manifest; gzip layers are unaffected.
+  args+=(--dest-oci-accept-uncompressed-layers)
+  if [[ $multiarch == true ]]; then
+    args+=(--all)
+  else
+    # Copy only linux/amd64 as a single manifest; avoid the manifest-list
+    # rewrite that Harbor performs for uncompressed OCI indexes.
+    args+=(--override-os linux --override-arch amd64)
+  fi
   if [[ $(tls_verify_for "$(host_of "$src")") == "false" ]]; then
     args+=(--src-tls-verify=false)
   fi

@@ -72,6 +72,8 @@ total=0
 
 sync_one() {
   local category=$1 name=$2 img_json=$3 src=$4 dst=$5 tag=$6 pinned=$7 platforms_json=$8
+  local multiarch=${9:-true}
+  local allow_replace=${10:-false}
   local src_ref="${src}:${tag}"
   local dst_ref="${dst}:${tag}"
   local start=$SECONDS
@@ -96,8 +98,12 @@ sync_one() {
     return 0
   fi
 
-  if ! src_digest=$(manifest_digest "$src_ref"); then
-    src_digest=''
+  if [[ $multiarch == false ]]; then
+    src_digest=$(manifest_amd64_digest "$src_ref")
+  else
+    src_digest=$(manifest_digest "$src_ref")
+  fi
+  if [[ -z $src_digest ]]; then
     record failed 'cannot resolve source manifest (tag missing or authentication failed)'
     error "cannot resolve ${src_ref}"
     return 1
@@ -156,7 +162,8 @@ sync_one() {
     # does not say which bytes are correct, so refuse instead of following
     # upstream. With a pin, the pin already matched the source above, so
     # replacing the target is a repair of the declared state.
-    if [[ -z $pinned ]] && [[ $(policy '.spec.verify.allowDigestReplace' false) != "true" ]]; then
+    if [[ -z $pinned ]] && [[ $allow_replace != true ]] \
+      && [[ $(policy '.spec.verify.allowDigestReplace' false) != "true" ]]; then
       record drift "target tag exists with a different digest (${dst_digest}); refusing to replace it without a pinned digest"
       error "refusing to overwrite ${dst_ref}: target ${dst_digest} != source ${src_digest}"
       error "pin versions[].digest, or set verify.allowDigestReplace: true to opt in"
@@ -168,7 +175,7 @@ sync_one() {
   fi
 
   info "copy ${src_ref} -> ${dst_ref}"
-  if ! retry skopeo_copy "$src_ref" "$dst_ref"; then
+  if ! retry skopeo_copy "$src_ref" "$dst_ref" "$multiarch"; then
     record failed 'skopeo copy failed after retries'
     return 1
   fi
@@ -213,7 +220,13 @@ while IFS=$'\t' read -r category doc; do
     src=$(jq -r '.source' <<<"$img_json")
     dst=$(jq -r '.target' <<<"$img_json")
     platforms_json=$(jq -c --argjson i "$i" \
-      '(.spec.defaults.platforms // []) as $def | .spec.images[$i].platforms // $def' <<<"$doc")
+      '(.spec.defaults.platforms // []) as $defaults | .spec.images[$i].platforms // $defaults' <<<"$doc")
+    multiarch=$(jq -r --argjson i "$i" \
+      'if ((.spec.images[$i].multiarch // .spec.defaults.multiarch) == false)
+       then "false" else "true" end' <<<"$doc")
+    allow_replace=$(jq -r --argjson i "$i" \
+      'if (.spec.images[$i].allowDigestReplace // .spec.defaults.allowDigestReplace) == true
+       then "true" else "false" end' <<<"$doc")
 
     version_count=$(jq '.versions | length' <<<"$img_json")
     for ((k = 0; k < version_count; k++)); do
@@ -225,7 +238,7 @@ while IFS=$'\t' read -r category doc; do
       fi
 
       total=$((total + 1))
-      if ! sync_one "$category" "$name" "$img_json" "$src" "$dst" "$tag" "$pinned" "$platforms_json"; then
+      if ! sync_one "$category" "$name" "$img_json" "$src" "$dst" "$tag" "$pinned" "$platforms_json" "$multiarch" "$allow_replace"; then
         failures=$((failures + 1))
       fi
     done

@@ -50,13 +50,15 @@ ignore_unfixed=$(policy '.spec.scan.ignoreUnfixed' true)
 sbom_enabled=$(policy '.spec.scan.sbom' true)
 sbom_format=$(policy '.spec.scan.sbomFormat' cyclonedx)
 fail_on_findings=$(policy '.spec.scan.failOnFindings' false)
-
 scan_one() {
   local ref=$1 slug json sbom critical high
   slug=$(printf '%s' "$ref" | sed -e 's|^docker://||' -e 's|[/:@]|_|g')
   json="${OUT_DIR}/${slug}.trivy.json"
 
-  local -a args=(image --quiet --format json --output "$json" --scanners "$scanners" --severity "$severities")
+  # Vendor images can exceed Trivy's default 5m timeout; LLVM bitcode analysis
+  # is slow and not useful for vulnerability scanning.
+  local -a extra=(--timeout 20m --skip-files '**/*.bc')
+  local -a args=(image --quiet --format json --output "$json" --scanners "$scanners" --severity "$severities" "${extra[@]}")
   if [[ $ignore_unfixed == true ]]; then
     args+=(--ignore-unfixed)
   fi
@@ -72,7 +74,7 @@ scan_one() {
 
   if [[ $sbom_enabled == true ]]; then
     sbom="${OUT_DIR}/${slug}.sbom.${sbom_format}.json"
-    if ! trivy image --quiet --format "$sbom_format" --output "$sbom" "$ref"; then
+    if ! trivy image --quiet "${extra[@]}" --format "$sbom_format" --output "$sbom" "$ref"; then
       warn "SBOM generation failed for ${ref}"
     fi
   fi

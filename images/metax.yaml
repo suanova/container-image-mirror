@@ -13,79 +13,79 @@ spec:
     # 核心组件: metax-operator chart (0.15.3) 引用的无架构后缀 tag。
     - name: metax-gpu-label
       source: harbor.isuanova.com/metax/gpu-label
-      target: harbor.isuanova.com/mirrors/gpu-label
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-label
       versions:
         - tag: "0.15.3"
           digest: sha256:54641b697aa7522619b0f0fa8e03491f8f0113b102359907331a566e29509153
 
     - name: metax-gpu-device
       source: harbor.isuanova.com/metax/gpu-device
-      target: harbor.isuanova.com/mirrors/gpu-device
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-device
       versions:
         - tag: "0.15.3"
           digest: sha256:a3627d41fdc0a0f78a1e3183481b855e8ef63f40f4c54616e26361f0a07c2f3f
 
     - name: metax-gpu-aware
       source: harbor.isuanova.com/metax/gpu-aware
-      target: harbor.isuanova.com/mirrors/gpu-aware
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-aware
       versions:
         - tag: "0.15.3"
           digest: sha256:37a800c609c776ccdf2601989251ec1e0bf87d935b3944edd368b95fc28a2b31
 
     - name: metax-topo-master
       source: harbor.isuanova.com/metax/topo-master
-      target: harbor.isuanova.com/mirrors/topo-master
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/topo-master
       versions:
         - tag: "0.15.3"
           digest: sha256:51227c6fc2331a520a823a6e796c43c5af90ebfa8de660e9a9dfcf6f9ab4b5bf
 
     - name: metax-topo-worker
       source: harbor.isuanova.com/metax/topo-worker
-      target: harbor.isuanova.com/mirrors/topo-worker
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/topo-worker
       versions:
         - tag: "0.15.3"
           digest: sha256:b9588208eaf72364150c5144cb794d08d0c574e5ae46d210c0b74c813f2ffbee
 
     - name: metax-operator-controller
       source: harbor.isuanova.com/metax/operator-controller
-      target: harbor.isuanova.com/mirrors/operator-controller
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/operator-controller
       versions:
         - tag: "0.15.3"
           digest: sha256:c9c2f6b67e46c31204f3f8f34eb84663d505cbe419c131f868bd17e6c0e33f81
 
     - name: metax-container-runtime
       source: harbor.isuanova.com/metax/container-runtime
-      target: harbor.isuanova.com/mirrors/container-runtime
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/container-runtime
       versions:
         - tag: "0.15.3"
           digest: sha256:1fdd60ce4631bc2fc3c80ddb0803d0b311c1227c7f1c52f06c7af727e3562f6e
 
     - name: metax-driver-manager
       source: harbor.isuanova.com/metax/driver-manager
-      target: harbor.isuanova.com/mirrors/driver-manager
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/driver-manager
       versions:
         - tag: "0.15.3"
           digest: sha256:32638ea1db2eeaff37f7745b5468e87c7344c89853a9e08923fea02f6f825d35
 
     - name: metax-gpu-scheduler
       source: harbor.isuanova.com/metax/gpu-scheduler
-      target: harbor.isuanova.com/mirrors/gpu-scheduler
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-scheduler
       versions:
         - tag: "0.15.3"
           digest: sha256:ee843abcc30ddc1d5d0f377b45a23baf29c3cf1fce2bba941a01e2879e675070
 
     # MACA SDK 与内核驱动镜像: tag 自带架构后缀, 与 cluster.defaults.conf 的
-    # METAX_MACA_IMAGE / METAX_DRIVER_VERSION 保持一致。
+    # METAX_MACA_IMAGE / METAX_DRIVER_VERSION 保持一致（driver 仍为 3.8.1.6）。
     - name: metax-maca
       source: harbor.isuanova.com/metax/maca
-      target: harbor.isuanova.com/mirrors/maca
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/public-library/maca
       versions:
         - tag: "3.8.1.2-ubuntu22.04-amd64"
           digest: sha256:22b53cbedd584db3e9baf5981073ed1b83a42658751ed98a6fafac26d21dd2f0
 
     - name: metax-driver-image
       source: harbor.isuanova.com/metax/driver-image
-      target: harbor.isuanova.com/mirrors/driver-image
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/driver-image
       versions:
         - tag: "3.8.1.6-amd64"
           digest: sha256:d604dcabdeeb2709848170d4c696e1579e3ed3d6edb2645cba657fc38a0607a7

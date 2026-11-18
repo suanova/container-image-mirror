@@ -33,11 +33,14 @@
 ### 同主机迁移（Harbor → Harbor）
 
 源主机与目标主机相同时（例如 Harbor 的 `metax/` → `mirrors/`），源主机段
-没有额外的溯源价值，允许省略，直接落到 `<Harbor>/<project>/<仓库路径>:<tag>`：
+没有额外的溯源价值，允许省略，直接落到 `<Harbor>/<project>/<path>:<tag>`。
+`<path>` 建议沿用镜像的**原始上游路径**（如 `cr.metax-tech.com/cloud/gpu-label`），
+消费端即可把供应商 ref 的前缀替换为 `harbor.isuanova.com/mirrors/`：
 
 | 源 | 镜像后 |
 | --- | --- |
-| `harbor.isuanova.com/metax/gpu-label:0.15.3` | `harbor.isuanova.com/mirrors/gpu-label:0.15.3` |
+| `harbor.isuanova.com/metax/gpu-label:0.15.3` | `harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-label:0.15.3` |
+| `harbor.isuanova.com/metax/maca:3.8.1.2-ubuntu22.04-amd64` | `harbor.isuanova.com/mirrors/cr.metax-tech.com/public-library/maca:3.8.1.2-ubuntu22.04-amd64` |
 
 `validate.sh` 仅在 source host != destination host 时强制 target 第三段为源主机。
 

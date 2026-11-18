@@ -874,7 +874,7 @@
       "name": "metax-container-runtime",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/container-runtime",
-      "target": "harbor.isuanova.com/mirrors/container-runtime",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/container-runtime",
       "versions": [
         {
           "tag": "0.15.3",
@@ -890,7 +890,7 @@
       "name": "metax-driver-image",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/driver-image",
-      "target": "harbor.isuanova.com/mirrors/driver-image",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/driver-image",
       "versions": [
         {
           "tag": "3.8.1.6-amd64",
@@ -906,7 +906,7 @@
       "name": "metax-driver-manager",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/driver-manager",
-      "target": "harbor.isuanova.com/mirrors/driver-manager",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/driver-manager",
       "versions": [
         {
           "tag": "0.15.3",
@@ -922,7 +922,7 @@
       "name": "metax-gpu-aware",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/gpu-aware",
-      "target": "harbor.isuanova.com/mirrors/gpu-aware",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-aware",
       "versions": [
         {
           "tag": "0.15.3",
@@ -938,7 +938,7 @@
       "name": "metax-gpu-device",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/gpu-device",
-      "target": "harbor.isuanova.com/mirrors/gpu-device",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-device",
       "versions": [
         {
           "tag": "0.15.3",
@@ -954,7 +954,7 @@
       "name": "metax-gpu-label",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/gpu-label",
-      "target": "harbor.isuanova.com/mirrors/gpu-label",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-label",
       "versions": [
         {
           "tag": "0.15.3",
@@ -970,7 +970,7 @@
       "name": "metax-gpu-scheduler",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/gpu-scheduler",
-      "target": "harbor.isuanova.com/mirrors/gpu-scheduler",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-scheduler",
       "versions": [
         {
           "tag": "0.15.3",
@@ -986,7 +986,7 @@
       "name": "metax-maca",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/maca",
-      "target": "harbor.isuanova.com/mirrors/maca",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/public-library/maca",
       "versions": [
         {
           "tag": "3.8.1.2-ubuntu22.04-amd64",
@@ -1002,7 +1002,7 @@
       "name": "metax-operator-controller",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/operator-controller",
-      "target": "harbor.isuanova.com/mirrors/operator-controller",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/operator-controller",
       "versions": [
         {
           "tag": "0.15.3",
@@ -1018,7 +1018,7 @@
       "name": "metax-topo-master",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/topo-master",
-      "target": "harbor.isuanova.com/mirrors/topo-master",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/topo-master",
       "versions": [
         {
           "tag": "0.15.3",
@@ -1034,7 +1034,7 @@
       "name": "metax-topo-worker",
       "category": "metax",
       "source": "harbor.isuanova.com/metax/topo-worker",
-      "target": "harbor.isuanova.com/mirrors/topo-worker",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/topo-worker",
       "versions": [
         {
           "tag": "0.15.3",

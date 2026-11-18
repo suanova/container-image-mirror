@@ -881,6 +881,12 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "0.15.3-amd64",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -911,6 +917,12 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "0.15.3-amd64",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -923,6 +935,12 @@
       "versions": [
         {
           "tag": "0.15.3",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
+          "tag": "0.15.3-amd64",
           "platforms": [
             "linux/amd64"
           ]
@@ -941,6 +959,12 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "0.15.3-amd64",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -956,6 +980,12 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "0.15.3-amd64",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -968,6 +998,12 @@
       "versions": [
         {
           "tag": "0.15.3",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
+          "tag": "0.15.3-amd64",
           "platforms": [
             "linux/amd64"
           ]
@@ -1001,6 +1037,12 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "0.15.3-amd64",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -1016,6 +1058,12 @@
           "platforms": [
             "linux/amd64"
           ]
+        },
+        {
+          "tag": "0.15.3-amd64",
+          "platforms": [
+            "linux/amd64"
+          ]
         }
       ]
     },
@@ -1028,6 +1076,12 @@
       "versions": [
         {
           "tag": "0.15.3",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
+          "tag": "0.15.3-amd64",
           "platforms": [
             "linux/amd64"
           ]

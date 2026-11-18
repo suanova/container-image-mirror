@@ -17,60 +17,71 @@ spec:
     allowDigestReplace: true
 
   images:
-    # 核心组件: metax-operator chart (0.15.3) 引用的无架构后缀 tag。
+    # 核心组件: metax-operator chart (0.15.3) 引用的 tag。无架构后缀的
+    # 0.15.3 与带 amd64 后缀的 0.15.3-amd64 都镜像，二者指向同一个 amd64
+    # manifest。
     - name: metax-gpu-label
       source: harbor.isuanova.com/metax/gpu-label
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-label
       versions:
         - tag: "0.15.3"
+        - tag: "0.15.3-amd64"
 
     - name: metax-gpu-device
       source: harbor.isuanova.com/metax/gpu-device
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-device
       versions:
         - tag: "0.15.3"
+        - tag: "0.15.3-amd64"
 
     - name: metax-gpu-aware
       source: harbor.isuanova.com/metax/gpu-aware
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-aware
       versions:
         - tag: "0.15.3"
+        - tag: "0.15.3-amd64"
 
     - name: metax-topo-master
       source: harbor.isuanova.com/metax/topo-master
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/topo-master
       versions:
         - tag: "0.15.3"
+        - tag: "0.15.3-amd64"
 
     - name: metax-topo-worker
       source: harbor.isuanova.com/metax/topo-worker
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/topo-worker
       versions:
         - tag: "0.15.3"
+        - tag: "0.15.3-amd64"
 
     - name: metax-operator-controller
       source: harbor.isuanova.com/metax/operator-controller
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/operator-controller
       versions:
         - tag: "0.15.3"
+        - tag: "0.15.3-amd64"
 
     - name: metax-container-runtime
       source: harbor.isuanova.com/metax/container-runtime
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/container-runtime
       versions:
         - tag: "0.15.3"
+        - tag: "0.15.3-amd64"
 
     - name: metax-driver-manager
       source: harbor.isuanova.com/metax/driver-manager
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/driver-manager
       versions:
         - tag: "0.15.3"
+        - tag: "0.15.3-amd64"
 
     - name: metax-gpu-scheduler
       source: harbor.isuanova.com/metax/gpu-scheduler
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-scheduler
       versions:
         - tag: "0.15.3"
+        - tag: "0.15.3-amd64"
 
     # MACA SDK 与内核驱动镜像: tag 自带架构后缀, 与 cluster.defaults.conf 的
     # METAX_MACA_IMAGE / METAX_DRIVER_VERSION 保持一致（driver 仍为 3.8.1.6）。

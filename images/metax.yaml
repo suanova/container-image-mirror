@@ -9,8 +9,8 @@ spec:
     platforms:
       - linux/amd64
     # Vendor images use uncompressed OCI layers. Copy only the amd64 manifest so
-    # Harbor does not rewrite the manifest list. Digest pins are optional; the
-    # post-copy check still compares source and target.
+    # Harbor does not rewrite the manifest list. Digest pins assert the amd64
+    # manifest; the post-copy check compares source and target.
     multiarch: false
     # The first migration may find partially written target tags from an
     # interrupted run; allow replacing them. Subsequent runs skip equal digests.
@@ -25,63 +25,81 @@ spec:
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-label
       versions:
         - tag: "0.15.3"
+          digest: sha256:f30ba541cbb98a0dd628f7b449ab54c4ccab36298fdfbbe19effb7b4ec5df5f7
         - tag: "0.15.3-amd64"
+          digest: sha256:f30ba541cbb98a0dd628f7b449ab54c4ccab36298fdfbbe19effb7b4ec5df5f7
 
     - name: metax-gpu-device
       source: harbor.isuanova.com/metax/gpu-device
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-device
       versions:
         - tag: "0.15.3"
+          digest: sha256:551cf1b147a4fbf6526a3fadd0f7cf94d3182a288b4f046dc40de5750b14567a
         - tag: "0.15.3-amd64"
+          digest: sha256:551cf1b147a4fbf6526a3fadd0f7cf94d3182a288b4f046dc40de5750b14567a
 
     - name: metax-gpu-aware
       source: harbor.isuanova.com/metax/gpu-aware
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-aware
       versions:
         - tag: "0.15.3"
+          digest: sha256:676cfa6bc5a1c5c33aaf257228e179c54adc644a6b049421371534618e6fb0e4
         - tag: "0.15.3-amd64"
+          digest: sha256:676cfa6bc5a1c5c33aaf257228e179c54adc644a6b049421371534618e6fb0e4
 
     - name: metax-topo-master
       source: harbor.isuanova.com/metax/topo-master
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/topo-master
       versions:
         - tag: "0.15.3"
+          digest: sha256:da9dac9111126878c8ecc5c88160b251f0fed86d6df08bc74085109d3a2f585b
         - tag: "0.15.3-amd64"
+          digest: sha256:da9dac9111126878c8ecc5c88160b251f0fed86d6df08bc74085109d3a2f585b
 
     - name: metax-topo-worker
       source: harbor.isuanova.com/metax/topo-worker
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/topo-worker
       versions:
         - tag: "0.15.3"
+          digest: sha256:7855e79d1254e8c09b3153a11df2cf502cca242e3d46881f2c172ac3c13072ab
         - tag: "0.15.3-amd64"
+          digest: sha256:7855e79d1254e8c09b3153a11df2cf502cca242e3d46881f2c172ac3c13072ab
 
     - name: metax-operator-controller
       source: harbor.isuanova.com/metax/operator-controller
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/operator-controller
       versions:
         - tag: "0.15.3"
+          digest: sha256:27f8d801a14e77ac1839575e938d9440a591b311ac93d48de748c13e4ef37613
         - tag: "0.15.3-amd64"
+          digest: sha256:27f8d801a14e77ac1839575e938d9440a591b311ac93d48de748c13e4ef37613
 
     - name: metax-container-runtime
       source: harbor.isuanova.com/metax/container-runtime
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/container-runtime
       versions:
         - tag: "0.15.3"
+          digest: sha256:777181d813dc1b44c3799819e9f9ac000e5ac6f66f823cb988900cd3285328e3
         - tag: "0.15.3-amd64"
+          digest: sha256:777181d813dc1b44c3799819e9f9ac000e5ac6f66f823cb988900cd3285328e3
 
     - name: metax-driver-manager
       source: harbor.isuanova.com/metax/driver-manager
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/driver-manager
       versions:
         - tag: "0.15.3"
+          digest: sha256:d55e6d5d8b6e1f74df3d7a61a7e8e90df3f9c4337ce881a99259e27fdd740daa
         - tag: "0.15.3-amd64"
+          digest: sha256:d55e6d5d8b6e1f74df3d7a61a7e8e90df3f9c4337ce881a99259e27fdd740daa
 
     - name: metax-gpu-scheduler
       source: harbor.isuanova.com/metax/gpu-scheduler
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/gpu-scheduler
       versions:
         - tag: "0.15.3"
+          digest: sha256:7fcb37749550fbac2e1f71272040cb3ac8f04968d27e30ab2cf9825a60633692
         - tag: "0.15.3-amd64"
+          digest: sha256:7fcb37749550fbac2e1f71272040cb3ac8f04968d27e30ab2cf9825a60633692
 
     # MACA SDK 与内核驱动镜像: tag 自带架构后缀, 与 cluster.defaults.conf 的
     # METAX_MACA_IMAGE / METAX_DRIVER_VERSION 保持一致（driver 仍为 3.8.1.6）。
@@ -90,9 +108,11 @@ spec:
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/public-library/maca
       versions:
         - tag: "3.8.1.2-ubuntu22.04-amd64"
+          digest: sha256:22b53cbedd584db3e9baf5981073ed1b83a42658751ed98a6fafac26d21dd2f0
 
     - name: metax-driver-image
       source: harbor.isuanova.com/metax/driver-image
       target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/driver-image
       versions:
         - tag: "3.8.1.6-amd64"
+          digest: sha256:d604dcabdeeb2709848170d4c696e1579e3ed3d6edb2645cba657fc38a0607a7

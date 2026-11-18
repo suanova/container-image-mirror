@@ -74,8 +74,10 @@ Registry 返回的 `Docker-Content-Digest` 一致。
       platforms: [linux/amd64, linux/arm64]
   ```
 
-- 某些厂商镜像使用**未压缩 OCI layer**，推送到 Harbor 时会被重新压缩，manifest
-  list 的 digest 会变。集群只用 amd64 时，可在 `spec.defaults` 或单个镜像下设置：
+- 某些厂商镜像使用**未压缩 OCI layer**。skopeo 推送到 registry（`docker://`）时
+  默认会重新压缩这些 layer，manifest digest 随之变化；
+  `--dest-oci-accept-uncompressed-layers` 只对 `oci:` transport 生效。集群只用
+  amd64 时，可在 `spec.defaults` 或单个镜像下设置：
 
   ```yaml
   spec:
@@ -83,9 +85,11 @@ Registry 返回的 `Docker-Content-Digest` 一致。
       multiarch: false
   ```
 
-  `multiarch: false` 只复制 `linux/amd64` 单架构，目标 tag 是单 manifest；
-  `versions[].digest` 必须写 **amd64 子 manifest 的 digest**（从源 manifest list
-  的 amd64 条目取）。这样 digest 不会因 Harbor 重写 manifest list 而变化。
+  `multiarch: false` 只复制 `linux/amd64` 单架构，并自动使用
+  `skopeo copy --preserve-digests`，要求目标 manifest 与源 amd64 子 manifest
+  逐字节一致。`versions[].digest` 必须写 **amd64 子 manifest 的 digest**（从源
+  manifest list 的 amd64 条目取）。如果目标 registry 无法原样保存该 manifest，
+  复制会明确失败，而不是写入一个 digest 不同的版本。
 
 - 只有上游根本没有 amd64 manifest 时才会去掉 `linux/amd64`，这种情况请在 PR
   里说明原因——集群只有 amd64 节点。

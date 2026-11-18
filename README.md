@@ -111,8 +111,10 @@ spec:
 - `versions[]` 只追加：只要还有发布线在用某个 tag，就不要删除它。
 - `source` / `target` 必须写全 Registry 主机名，且**不能**带 tag 或 digest；
   版本只能写在 `versions[]`。
-- `target` 必须是 `<destination>/<project>/<source-host>/<path>`，
-  且 `<source-host>` 必须与 `source` 的主机名一致。
+- `target` 必须是 `<destination>/<project>/<source-host>/<path>`，且
+  `<source-host>` 必须与 `source` 的主机名一致；**同主机迁移**
+  （source host == target host，如 Harbor `metax/` → `mirrors/`）可省略
+  `<source-host>` 和源项目前缀，直接 `<destination>/<project>/<path>`。
 - `latest` 默认被拒绝（`config/policies.yaml` 的 `allowLatest`）。
 - 同一 `source:tag` 或 `target:tag` 不允许在多个文件里重复出现。
 

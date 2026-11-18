@@ -48,6 +48,10 @@ def msg: "\($file): \(.)";
       | ($img.target // "") as $t
       | ($t | split("/")) as $tp
       | ($destinations | map(select(.host == $tp[0])) | .[0] // {}) as $dest
+      | ($s | split("/")[0]) as $sh
+      # Same-host migrations (e.g. Harbor metax/ -> mirrors/) do not need the
+      # source host repeated in the target path; external sources still do.
+      | (($requireHost == "true") and ($sh != $dest.host)) as $needHost
       | (
 
           (if ($n | name_ok | not)
@@ -72,12 +76,13 @@ def msg: "\($file): \(.)";
             then "\($n): target must not embed a tag or digest; use versions[]"
             elif $dest.host == null
             then "\($n): target host \($tp[0]) is not a configured destination"
-            elif ($tp | length) < 4
-            then "\($n): target must include <project>/<source-host>/<path>"
+            elif ($tp | length) < (if $needHost then 4 else 3 end)
+            then "\($n): target must include <project>/<path>" +
+                 (if $needHost then " with <source-host>" else "" end)
             elif $tp[1] != $dest.project
             then "\($n): target must live under the '\($dest.project)' project, got '\($tp[1])'"
-            elif ($requireHost == "true") and ($tp[2] != ($s | split("/")[0]))
-            then "\($n): target must embed the source host '\($s | split("/")[0])' at position 3, got '\($tp[2])'"
+            elif $needHost and ($tp[2] != $sh)
+            then "\($n): target must embed the source host '\($sh)' at position 3, got '\($tp[2])'"
             else empty end),
 
           ( ($img.versions // []) as $versions

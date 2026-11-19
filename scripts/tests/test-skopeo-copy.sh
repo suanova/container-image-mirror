@@ -19,6 +19,10 @@ if grep -qx -- '--preserve-digests' <<<"${multiarch_out}"; then
   fail "multiarch copy must not force a single platform"
 fi
 
+default_out="$(skopeo_copy docker://src.example/repo:v1 docker://dst.example/repo:v1)"
+grep -qx -- '--all' <<<"${default_out}" \
+  || fail "multiarch must be the default when the third argument is omitted"
+
 single_out="$(skopeo_copy docker://src.example/repo:v1 docker://dst.example/repo:v1 false)"
 grep -qx -- '--preserve-digests' <<<"${single_out}" \
   || fail "single-arch copy must preserve digests"

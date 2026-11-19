@@ -255,6 +255,7 @@
         },
         {
           "tag": "v1.14.2",
+          "digest": "sha256:e7e6440cfd1e919280958f5b5a6ab2b184d385bba774c12ad2a9e1e4183f90d9",
           "platforms": [
             "linux/amd64"
           ]
@@ -630,6 +631,7 @@
         },
         {
           "tag": "v1.36.5",
+          "digest": "sha256:4b3e69973a1d58d3c1f670d3477a9b9f14a03a271823113e8e0c9a333eb84f48",
           "platforms": [
             "linux/amd64"
           ]
@@ -652,6 +654,7 @@
         },
         {
           "tag": "v1.36.5",
+          "digest": "sha256:2d717af134451db77ea053c3426bc82edc0e55415eb36e1260313c636ebe9a4d",
           "platforms": [
             "linux/amd64"
           ]
@@ -674,6 +677,7 @@
         },
         {
           "tag": "v1.36.5",
+          "digest": "sha256:5f180e85f05b5b0949fc9d2886ca536c2aa8b8a3b8302b58e7d49c4a645f97a9",
           "platforms": [
             "linux/amd64"
           ]
@@ -712,6 +716,7 @@
         },
         {
           "tag": "v1.36.5",
+          "digest": "sha256:3804f66442962cefbe11fcd5330d5e7a797bfb3dc8535c322d005637b404a85f",
           "platforms": [
             "linux/amd64"
           ]
@@ -1243,6 +1248,7 @@
         },
         {
           "tag": "3.10.2",
+          "digest": "sha256:f548e0e8e3dc1896ca956272154dde3314e8cc4fde0a57577ee9fa1c63f5baf4",
           "platforms": [
             "linux/amd64"
           ]

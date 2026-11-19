@@ -22,7 +22,7 @@ spec:
       target: harbor.isuanova.com/mirrors/ghcr.io/cloudnative-pg/postgresql
       versions:
         - tag: "16.15-system-trixie"
-          digest: sha256:c19eac3ed7d86b0261ef5551c4daf9c61fba554a51664abe7c4f689f5b478993
+          digest: sha256:1546be7d23066aaf9eb75b07df17c843c98483cede7afdbaf01dca785fb3bf60
 
     - name: redis
       source: quay.io/opstree/redis

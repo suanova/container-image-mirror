@@ -274,7 +274,7 @@ assert_platforms() {
 }
 
 skopeo_copy() {
-  local src dst multiarch=${2:-true}
+  local src dst multiarch=${3:-true}
   src=$(strip_scheme "$1")
   dst=$(strip_scheme "$2")
   local -a args=(copy --authfile "$AUTHFILE" --retry-times "$(policy '.spec.copy.retryTimes' 5)")

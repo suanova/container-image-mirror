@@ -55,5 +55,8 @@ jobs:
       - name: Lint shell scripts
         run: shellcheck scripts/*.sh
 
+      - name: Test skopeo copy arguments
+        run: ./scripts/tests/test-skopeo-copy.sh
+
       - name: Validate manifests
         run: ./scripts/validate.sh

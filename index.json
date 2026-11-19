@@ -1177,7 +1177,7 @@
         },
         {
           "tag": "1.30.6-alpine",
-          "digest": "sha256:583b7f2fce1cdb8da5ad5c39ebd3c33b98b87d493190e548bdee1fa8c619c311",
+          "digest": "sha256:901e593c95dc85f5a729f5765516321366ef4ac401821431d408897e95287d0a",
           "platforms": [
             "linux/amd64"
           ]
@@ -1296,7 +1296,7 @@
       "versions": [
         {
           "tag": "16.15-system-trixie",
-          "digest": "sha256:c19eac3ed7d86b0261ef5551c4daf9c61fba554a51664abe7c4f689f5b478993",
+          "digest": "sha256:1546be7d23066aaf9eb75b07df17c843c98483cede7afdbaf01dca785fb3bf60",
           "platforms": [
             "linux/amd64"
           ]

@@ -116,3 +116,12 @@ spec:
       versions:
         - tag: "3.8.1.6-amd64"
           digest: sha256:d604dcabdeeb2709848170d4c696e1579e3ed3d6edb2645cba657fc38a0607a7
+
+    - name: metax-mx-exporter
+      source: harbor.isuanova.com/metax/mx-exporter
+      target: harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/mx-exporter
+      versions:
+        - tag: "0.15.3"
+          digest: sha256:df8fc4df6ccf49f09283354acbe589293c3eebe03a20ef445062a7c98f42e478
+        - tag: "0.15.3-amd64"
+          digest: sha256:df8fc4df6ccf49f09283354acbe589293c3eebe03a20ef445062a7c98f42e478

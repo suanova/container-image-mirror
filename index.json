@@ -1045,6 +1045,29 @@
       ]
     },
     {
+      "id": "metax/metax-mx-exporter",
+      "name": "metax-mx-exporter",
+      "category": "metax",
+      "source": "harbor.isuanova.com/metax/mx-exporter",
+      "target": "harbor.isuanova.com/mirrors/cr.metax-tech.com/cloud/mx-exporter",
+      "versions": [
+        {
+          "tag": "0.15.3",
+          "digest": "sha256:df8fc4df6ccf49f09283354acbe589293c3eebe03a20ef445062a7c98f42e478",
+          "platforms": [
+            "linux/amd64"
+          ]
+        },
+        {
+          "tag": "0.15.3-amd64",
+          "digest": "sha256:df8fc4df6ccf49f09283354acbe589293c3eebe03a20ef445062a7c98f42e478",
+          "platforms": [
+            "linux/amd64"
+          ]
+        }
+      ]
+    },
+    {
       "id": "metax/metax-operator-controller",
       "name": "metax-operator-controller",
       "category": "metax",
